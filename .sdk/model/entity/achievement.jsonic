@@ -1,0 +1,78 @@
+# Entity: achievement
+
+main: kit: entity: achievement: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "level"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "neko_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "progress"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "user_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "achievement"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "user_id"
+                orig: "user_id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/achievements"
+          parts: [
+            "achievements"
+          ]
+          select: {
+            exist: [
+              "user_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

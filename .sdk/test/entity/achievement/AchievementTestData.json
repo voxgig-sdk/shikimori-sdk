@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "achievement": {
+      "ACHIEVEMENT00": {
+        "id": "ACHIEVEMENT00",
+        "level": "s33",
+        "neko_id": "NEKO01",
+        "progress": "s35",
+        "user_id": "USER01"
+      },
+      "ACHIEVEMENT01": {
+        "id": "ACHIEVEMENT01",
+        "level": "s65",
+        "neko_id": "NEKO01",
+        "progress": "s67",
+        "user_id": "USER01"
+      },
+      "ACHIEVEMENT02": {
+        "id": "ACHIEVEMENT02",
+        "level": "s97",
+        "neko_id": "NEKO01",
+        "progress": "s99",
+        "user_id": "USER01"
+      }
+    }
+  },
+  "new": {
+    "achievement": {
+      "achievement_ref01": {
+        "level": "sc9",
+        "neko_id": "NEKO01",
+        "progress": "scb",
+        "user_id": "USER01"
+      }
+    }
+  }
+}

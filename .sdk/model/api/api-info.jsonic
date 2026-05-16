@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "admin@shikimori.me"
+        name: "API Support"
+      }
+      description: "The Shikimori API provides access to various data related to anime, manga, and user interactions on the Shikimori platform. It allows developers to fetch information about animes, mangas, characters, users, and more, while using OAuth2 for authentication."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://shikimori.one/api"
+        }
+      ]
+      title: "Shikimori API"
+      version: "1.0"
+      "x-documentation": "https://shikimori.one/api/doc/1.0"
+    }
+  }
+}
+
+}

@@ -1,0 +1,522 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Shikimori API",
+    "description": "The Shikimori API provides access to various data related to anime, manga, and user interactions on the Shikimori platform. It allows developers to fetch information about animes, mangas, characters, users, and more, while using OAuth2 for authentication.",
+    "version": "1.0",
+    "contact": {
+      "name": "API Support",
+      "email": "admin@shikimori.me"
+    },
+    "x-documentation": "https://shikimori.one/api/doc/1.0"
+  },
+  "servers": [
+    {
+      "url": "https://shikimori.one/api",
+      "description": "Production server"
+    }
+  ],
+  "security": [
+    {
+      "oauth2": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Achievements",
+      "description": "User achievements related operations"
+    },
+    {
+      "name": "Animes",
+      "description": "Anime related operations"
+    }
+  ],
+  "paths": {
+    "/achievements": {
+      "get": {
+        "tags": [
+          "Achievements"
+        ],
+        "summary": "List user achievements",
+        "description": "Retrieve a list of achievements for a specific user",
+        "operationId": "getAchievements",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The ID of the user whose achievements to retrieve",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Achievement"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid user_id"
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing OAuth2 token"
+          },
+          "429": {
+            "description": "Rate limit exceeded (5rps or 90rpm)"
+          }
+        }
+      }
+    },
+    "/animes": {
+      "get": {
+        "tags": [
+          "Animes"
+        ],
+        "summary": "List animes",
+        "description": "Retrieve a list of animes with various filtering and sorting options. Most parameters can be grouped in lists separated by comma, used in subtraction mode with '!' prefix, or combined.",
+        "operationId": "getAnimes",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100000
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page (maximum 50)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Sort order for results",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "id",
+                "id_desc",
+                "ranked",
+                "kind",
+                "popularity",
+                "name",
+                "aired_on",
+                "episodes",
+                "status",
+                "random",
+                "ranked_random",
+                "ranked_shiki",
+                "created_at",
+                "created_at_desc",
+                "updated_at",
+                "updated_at_desc"
+              ]
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Deprecated parameter for anime type",
+            "required": false,
+            "deprecated": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "description": "Type of anime. Can be comma-separated list or use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "tv",
+                "movie",
+                "ova",
+                "ona",
+                "special",
+                "tv_special",
+                "music",
+                "pv",
+                "cm",
+                "tv_13",
+                "tv_24",
+                "tv_48"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Status of anime. Can be comma-separated list or use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "anons",
+                "ongoing",
+                "released"
+              ]
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "description": "Season filter. Examples: summer_2017, 2016, 2014_2016, 199x. Can be comma-separated list or use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "score",
+            "in": "query",
+            "description": "Minimal anime score",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "duration",
+            "in": "query",
+            "description": "Duration category: S (less than 10 minutes), D (less than 30 minutes), F (more than 30 minutes)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "S",
+                "D",
+                "F"
+              ]
+            }
+          },
+          {
+            "name": "rating",
+            "in": "query",
+            "description": "Age rating of the anime",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "none",
+                "g",
+                "pg",
+                "pg_13",
+                "r",
+                "r_plus",
+                "rx"
+              ]
+            }
+          },
+          {
+            "name": "genre",
+            "in": "query",
+            "description": "List of genre IDs separated by comma. Can use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "genre_v2",
+            "in": "query",
+            "description": "List of genre v2 IDs separated by comma. Can use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studio",
+            "in": "query",
+            "description": "List of studio IDs separated by comma. Can use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "franchise",
+            "in": "query",
+            "description": "List of franchises separated by comma. Can use '!' for exclusion",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of animes. Returns N+1 results if next page exists when requesting N elements",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Anime"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters"
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing OAuth2 token"
+          },
+          "429": {
+            "description": "Rate limit exceeded (5rps or 90rpm)"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "OAuth2 authentication. See https://shikimori.one/oauth for details. User-Agent header with your OAuth2 Application name is required.",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://shikimori.one/oauth/authorize",
+            "tokenUrl": "https://shikimori.one/oauth/token",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Achievement": {
+        "type": "object",
+        "description": "User achievement object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Achievement ID"
+          },
+          "neko_id": {
+            "type": "string",
+            "description": "Neko achievement identifier"
+          },
+          "level": {
+            "type": "integer",
+            "description": "Achievement level"
+          },
+          "progress": {
+            "type": "integer",
+            "description": "Progress towards next level"
+          },
+          "user_id": {
+            "type": "integer",
+            "description": "User ID"
+          }
+        }
+      },
+      "Anime": {
+        "type": "object",
+        "description": "Anime object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Anime ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Anime name"
+          },
+          "russian": {
+            "type": "string",
+            "description": "Russian name"
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "original": {
+                "type": "string",
+                "description": "Original image URL"
+              },
+              "preview": {
+                "type": "string",
+                "description": "Preview image URL"
+              },
+              "x96": {
+                "type": "string",
+                "description": "96px image URL"
+              },
+              "x48": {
+                "type": "string",
+                "description": "48px image URL"
+              }
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "Anime URL"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "tv",
+              "movie",
+              "ova",
+              "ona",
+              "special",
+              "tv_special",
+              "music",
+              "pv",
+              "cm"
+            ],
+            "description": "Anime type"
+          },
+          "score": {
+            "type": "string",
+            "description": "Anime score"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "anons",
+              "ongoing",
+              "released"
+            ],
+            "description": "Anime status"
+          },
+          "episodes": {
+            "type": "integer",
+            "description": "Number of episodes"
+          },
+          "episodes_aired": {
+            "type": "integer",
+            "description": "Number of aired episodes"
+          },
+          "aired_on": {
+            "type": "string",
+            "format": "date",
+            "description": "Aired date"
+          },
+          "released_on": {
+            "type": "string",
+            "format": "date",
+            "description": "Released date"
+          },
+          "rating": {
+            "type": "string",
+            "enum": [
+              "none",
+              "g",
+              "pg",
+              "pg_13",
+              "r",
+              "r_plus",
+              "rx"
+            ],
+            "description": "Age rating"
+          },
+          "english": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "English names"
+          },
+          "japanese": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Japanese names"
+          },
+          "synonyms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Alternative names"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Episode duration in minutes"
+          },
+          "description": {
+            "type": "string",
+            "description": "Anime description"
+          },
+          "description_html": {
+            "type": "string",
+            "description": "HTML formatted description"
+          },
+          "franchise": {
+            "type": "string",
+            "description": "Franchise name"
+          },
+          "favoured": {
+            "type": "boolean",
+            "description": "Favoured by user"
+          },
+          "anons": {
+            "type": "boolean",
+            "description": "Is in anons state"
+          },
+          "ongoing": {
+            "type": "boolean",
+            "description": "Is ongoing"
+          },
+          "thread_id": {
+            "type": "integer",
+            "description": "Thread ID"
+          },
+          "topic_id": {
+            "type": "integer",
+            "description": "Topic ID"
+          },
+          "myanimelist_id": {
+            "type": "integer",
+            "description": "MyAnimeList ID"
+          },
+          "rates_scores_stats": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Rating statistics"
+          },
+          "rates_statuses_stats": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Status statistics"
+          }
+        }
+      }
+    }
+  },
+  "x-rate-limits": {
+    "requests-per-second": 5,
+    "requests-per-minute": 90
+  }
+}
