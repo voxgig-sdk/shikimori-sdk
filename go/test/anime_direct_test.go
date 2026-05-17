@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/shikimori-sdk"
-	"github.com/voxgig-sdk/shikimori-sdk/core"
+	sdk "github.com/voxgig-sdk/shikimori-sdk/go"
+	"github.com/voxgig-sdk/shikimori-sdk/go/core"
 )
 
 func TestAnimeDirect(t *testing.T) {

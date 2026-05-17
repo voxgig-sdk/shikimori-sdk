@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/shikimori-sdk"
-	"github.com/voxgig-sdk/shikimori-sdk/core"
+	sdk "github.com/voxgig-sdk/shikimori-sdk/go"
+	"github.com/voxgig-sdk/shikimori-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/shikimori-sdk/go/utility/struct"
 )
 
 func TestAnimeEntity(t *testing.T) {

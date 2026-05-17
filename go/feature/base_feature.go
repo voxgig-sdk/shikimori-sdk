@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/shikimori-sdk/core"
+	"github.com/voxgig-sdk/shikimori-sdk/go/core"
 )
 
 type BaseFeature struct {

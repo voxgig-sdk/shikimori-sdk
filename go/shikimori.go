@@ -1,10 +1,10 @@
 package voxgigshikimorisdk
 
 import (
-	"github.com/voxgig-sdk/shikimori-sdk/core"
-	"github.com/voxgig-sdk/shikimori-sdk/entity"
-	"github.com/voxgig-sdk/shikimori-sdk/feature"
-	_ "github.com/voxgig-sdk/shikimori-sdk/utility"
+	"github.com/voxgig-sdk/shikimori-sdk/go/core"
+	"github.com/voxgig-sdk/shikimori-sdk/go/entity"
+	"github.com/voxgig-sdk/shikimori-sdk/go/feature"
+	_ "github.com/voxgig-sdk/shikimori-sdk/go/utility"
 )
 
 // Type aliases preserve external API.
