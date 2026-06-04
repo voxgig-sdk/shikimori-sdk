@@ -62,14 +62,12 @@ def anime_direct_setup(mockres)
   env = Runner.env_override({
     "SHIKIMORI_TEST_ANIME_ENTID" => {},
     "SHIKIMORI_TEST_LIVE" => "FALSE",
-    "SHIKIMORI_APIKEY" => "NONE",
   })
 
   live = env["SHIKIMORI_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["SHIKIMORI_APIKEY"],
     }
     client = ShikimoriSDK.new(merged_opts)
     return {

@@ -119,7 +119,6 @@ func animeBasicSetup(extra map[string]any) *entityTestSetup {
 		"SHIKIMORI_TEST_ANIME_ENTID": idmap,
 		"SHIKIMORI_TEST_LIVE":      "FALSE",
 		"SHIKIMORI_TEST_EXPLAIN":   "FALSE",
-		"SHIKIMORI_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["SHIKIMORI_TEST_ANIME_ENTID"])
@@ -130,7 +129,6 @@ func animeBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["SHIKIMORI_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["SHIKIMORI_APIKEY"],
 			},
 			extra,
 		})

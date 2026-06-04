@@ -14,9 +14,6 @@ local function make_config()
     },
     options = {
       base = "https://shikimori.one/api",
-      auth = {
-        prefix = "Bearer",
-      },
       headers = {
         ["content-type"] = "application/json",
       },

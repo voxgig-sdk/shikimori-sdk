@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'SHIKIMORI_TEST_ANIME_ENTID': {},
     'SHIKIMORI_TEST_LIVE': 'FALSE',
-    'SHIKIMORI_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.SHIKIMORI_TEST_LIVE
 
   if (live) {
     const client = new ShikimoriSDK({
-      apikey: env.SHIKIMORI_APIKEY,
     })
 
     let idmap: any = env['SHIKIMORI_TEST_ANIME_ENTID']
