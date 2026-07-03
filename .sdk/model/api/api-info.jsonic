@@ -18,28 +18,7 @@ main: {
       title: "Shikimori API"
       version: "1.0"
       "x-documentation": "https://shikimori.one/api/doc/1.0"
-      tagline: "Read anime, manga, character and user data from the Shikimori Russian anime/manga tracker"
-      homepage: "https://shikimori.one"
-      docs_url: "https://shikimori.one/api/doc/1.0"
-      license_short: "OAuth2 required; usage governed by Shikimori site terms"
-      license_md: `- Access requires OAuth2 authentication
-- Requests must send an \`User-Agent\` header naming your OAuth2 application; mimicking browsers can lead to IP bans
-- The site asks integrators to fetch data via the API rather than scraping the main site`
-      about_md: `[Shikimori](https://shikimori.one) is a Russian-language anime and manga tracker that lets users catalogue what they have watched or read, rate titles, and participate in clubs, forums and reviews. The platform exposes its catalogue and user-activity data through a public API.
-
-Shikimori offers three API surfaces: a recommended GraphQL endpoint and two older REST versions (v1 and v2). The REST API is documented at \`/api/doc/1.0\` and covers, among other things:
-
-- Anime and manga listings, details, roles, related and similar titles, screenshots, franchise graphs and external links
-- Characters and people search
-- User profiles, anime/manga rate lists, favourites and achievements
-- Social features such as comments, topics, forums, messages and reviews
-
-Access is rate-limited to 5 requests per second and 90 requests per minute, and OAuth2 applications must identify themselves in the \`User-Agent\` header. HTTPS is required and CORS is disabled on the public endpoints.`
-      entity_desc: {
-        achievement: "User achievement records earned on Shikimori, exposed via the achievements endpoints documented at `/api/doc/1.0`"
-        anime: "Anime titles in the Shikimori catalogue, with list and detail operations under `/api/animes` plus related sub-resources for roles, similar titles, related works, screenshots, franchise info and external links"
-      }
-      auth: false
     }
   }
 }
+

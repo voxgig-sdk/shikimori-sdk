@@ -92,6 +92,7 @@ function anime_basic_setup(extra)
     ["SHIKIMORI_TEST_ANIME_ENTID"] = idmap,
     ["SHIKIMORI_TEST_LIVE"] = "FALSE",
     ["SHIKIMORI_TEST_EXPLAIN"] = "FALSE",
+    ["SHIKIMORI_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,6 +104,7 @@ function anime_basic_setup(extra)
   if env["SHIKIMORI_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["SHIKIMORI_APIKEY"],
       },
       extra or {},
     })

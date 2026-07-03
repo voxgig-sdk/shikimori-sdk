@@ -1,21 +1,8 @@
 # Shikimori SDK
 
-Read anime, manga, character and user data from the Shikimori Russian anime/manga tracker
+Shikimori API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Shikimori API
-
-[Shikimori](https://shikimori.one) is a Russian-language anime and manga tracker that lets users catalogue what they have watched or read, rate titles, and participate in clubs, forums and reviews. The platform exposes its catalogue and user-activity data through a public API.
-
-Shikimori offers three API surfaces: a recommended GraphQL endpoint and two older REST versions (v1 and v2). The REST API is documented at `/api/doc/1.0` and covers, among other things:
-
-- Anime and manga listings, details, roles, related and similar titles, screenshots, franchise graphs and external links
-- Characters and people search
-- User profiles, anime/manga rate lists, favourites and achievements
-- Social features such as comments, topics, forums, messages and reviews
-
-Access is rate-limited to 5 requests per second and 90 requests per minute, and OAuth2 applications must identify themselves in the `User-Agent` header. HTTPS is required and CORS is disabled on the public endpoints.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install shikimori-sdk
 luarocks install shikimori-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { ShikimoriSDK } from 'shikimori'
 
-const client = new ShikimoriSDK({})
+const client = new ShikimoriSDK({
+  apikey: process.env.SHIKIMORI_APIKEY,
+})
 
 // List all achievements
 const achievements = await client.Achievement().list()
+console.log(achievements.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Achievement** | User achievement records earned on Shikimori, exposed via the achievements endpoints documented at `/api/doc/1.0` | `/achievements` |
-| **Anime** | Anime titles in the Shikimori catalogue, with list and detail operations under `/api/animes` plus related sub-resources for roles, similar titles, related works, screenshots, franchise info and external links | `/animes` |
+| **Achievement** |  | `/achievements` |
+| **Anime** |  | `/animes` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from shikimori_sdk import ShikimoriSDK
 
-client = ShikimoriSDK({})
+client = ShikimoriSDK({
+    "apikey": os.environ.get("SHIKIMORI_APIKEY"),
+})
 
 # List all achievements
-achievements, err = client.Achievement(None).list(None, None)
+achievements, err = client.Achievement().list()
+print(achievements)
 ```
 
 ### PHP
@@ -126,10 +119,13 @@ achievements, err = client.Achievement(None).list(None, None)
 <?php
 require_once 'shikimori_sdk.php';
 
-$client = new ShikimoriSDK([]);
+$client = new ShikimoriSDK([
+    "apikey" => getenv("SHIKIMORI_APIKEY"),
+]);
 
 // List all achievements
-[$achievements, $err] = $client->Achievement(null)->list(null, null);
+[$achievements, $err] = $client->Achievement()->list();
+print_r($achievements);
 ```
 
 ### Golang
@@ -137,10 +133,13 @@ $client = new ShikimoriSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/shikimori-sdk/go"
 
-client := sdk.NewShikimoriSDK(map[string]any{})
+client := sdk.NewShikimoriSDK(map[string]any{
+    "apikey": os.Getenv("SHIKIMORI_APIKEY"),
+})
 
 // List all achievements
 achievements, err := client.Achievement(nil).List(nil, nil)
+fmt.Println(achievements)
 ```
 
 ### Ruby
@@ -148,10 +147,13 @@ achievements, err := client.Achievement(nil).List(nil, nil)
 ```ruby
 require_relative "Shikimori_sdk"
 
-client = ShikimoriSDK.new({})
+client = ShikimoriSDK.new({
+  "apikey" => ENV["SHIKIMORI_APIKEY"],
+})
 
 # List all achievements
-achievements, err = client.Achievement(nil).list(nil, nil)
+achievements, err = client.Achievement().list
+puts achievements
 ```
 
 ### Lua
@@ -159,10 +161,13 @@ achievements, err = client.Achievement(nil).list(nil, nil)
 ```lua
 local sdk = require("shikimori_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("SHIKIMORI_APIKEY"),
+})
 
 -- List all achievements
-local achievements, err = client:Achievement(nil):list(nil, nil)
+local achievements, err = client:Achievement():list()
+print(achievements)
 ```
 
 ## Unit testing in offline mode
@@ -181,25 +186,21 @@ const result = await client.Achievement().load({ id: 'test01' })
 ### Python
 
 ```python
-client = ShikimoriSDK.test(None, None)
-result, err = client.Achievement(None).load(
-    {"id": "test01"}, None
-)
+client = ShikimoriSDK.test()
+result, err = client.Achievement().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = ShikimoriSDK::test(null, null);
-[$result, $err] = $client->Achievement(null)->load(
-    ["id" => "test01"], null
-);
+$client = ShikimoriSDK::test();
+[$result, $err] = $client->Achievement()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Achievement(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -208,19 +209,15 @@ result, err := client.Achievement(nil).Load(
 ### Ruby
 
 ```ruby
-client = ShikimoriSDK.test(nil, nil)
-result, err = client.Achievement(nil).load(
-  { "id" => "test01" }, nil
-)
+client = ShikimoriSDK.test
+result, err = client.Achievement().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Achievement(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Achievement():load({ id = "test01" })
 ```
 
 ## How it works
@@ -324,15 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Shikimori API
-
-- Upstream: [https://shikimori.one](https://shikimori.one)
-- API docs: [https://shikimori.one/api/doc/1.0](https://shikimori.one/api/doc/1.0)
-
-- Access requires OAuth2 authentication
-- Requests must send an `User-Agent` header naming your OAuth2 application; mimicking browsers can lead to IP bans
-- The site asks integrators to fetch data via the API rather than scraping the main site
 
 ---
 

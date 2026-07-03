@@ -93,12 +93,14 @@ func animeDirectSetup(mockres any) *animeDirectSetupResult {
 	env := envOverride(map[string]any{
 		"SHIKIMORI_TEST_ANIME_ENTID": map[string]any{},
 		"SHIKIMORI_TEST_LIVE":    "FALSE",
+		"SHIKIMORI_APIKEY":       "NONE",
 	})
 
 	live := env["SHIKIMORI_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["SHIKIMORI_APIKEY"],
 		}
 		client := sdk.NewShikimoriSDK(mergedOpts)
 

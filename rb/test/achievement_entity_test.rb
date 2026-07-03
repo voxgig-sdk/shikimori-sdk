@@ -83,6 +83,7 @@ def achievement_basic_setup(extra)
     "SHIKIMORI_TEST_ACHIEVEMENT_ENTID" => idmap,
     "SHIKIMORI_TEST_LIVE" => "FALSE",
     "SHIKIMORI_TEST_EXPLAIN" => "FALSE",
+    "SHIKIMORI_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def achievement_basic_setup(extra)
   if env["SHIKIMORI_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["SHIKIMORI_APIKEY"],
       },
       extra || {},
     ])

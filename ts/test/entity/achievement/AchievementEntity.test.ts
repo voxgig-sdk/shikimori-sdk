@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'SHIKIMORI_TEST_ACHIEVEMENT_ENTID': idmap,
     'SHIKIMORI_TEST_LIVE': 'FALSE',
     'SHIKIMORI_TEST_EXPLAIN': 'FALSE',
+    'SHIKIMORI_APIKEY': 'NONE',
   })
 
   idmap = env['SHIKIMORI_TEST_ACHIEVEMENT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new ShikimoriSDK(merge([
       {
+        apikey: env.SHIKIMORI_APIKEY,
       },
       extra
     ]))
