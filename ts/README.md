@@ -10,7 +10,7 @@ The TypeScript SDK for the Shikimori API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install shikimori
+npm install @voxgig-sdk/shikimori
 ```
 ## Tutorial: your first API call
 

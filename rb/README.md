@@ -10,13 +10,13 @@ The Ruby SDK for the Shikimori API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install shikimori-sdk
+gem install voxgig-sdk-shikimori
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "shikimori-sdk"
+gem "voxgig-sdk-shikimori"
 ```
 
 Then run:

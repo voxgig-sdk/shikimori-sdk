@@ -10,7 +10,7 @@ The Python SDK for the Shikimori API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install shikimori-sdk
+pip install voxgig-sdk-shikimori
 ```
 
 Or install from source:

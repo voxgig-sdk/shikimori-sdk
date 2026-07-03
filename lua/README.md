@@ -10,7 +10,7 @@ The Lua SDK for the Shikimori API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install shikimori-sdk
+luarocks install voxgig-sdk-shikimori
 ```
 
 If the module is not yet published, add the source directory to

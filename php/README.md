@@ -10,7 +10,7 @@ The PHP SDK for the Shikimori API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/shikimori-sdk
+composer require voxgig-sdk/shikimori
 ```
 
 
