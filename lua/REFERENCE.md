@@ -88,7 +88,7 @@ same parameters as `direct()`.
 ## AchievementEntity
 
 ```lua
-local achievement = client:achievement(nil)
+local achievement = client:Achievement(nil)
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ local achievement = client:achievement(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:achievement():list()
+local results, err = client:Achievement():list()
 ```
 
 ### Common Methods
@@ -144,7 +144,7 @@ Return the entity name.
 ## AnimeEntity
 
 ```lua
-local anime = client:anime(nil)
+local anime = client:Anime(nil)
 ```
 
 ### Fields
@@ -187,7 +187,7 @@ local anime = client:anime(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:anime():list()
+local results, err = client:Anime():list()
 ```
 
 ### Common Methods

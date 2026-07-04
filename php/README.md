@@ -31,18 +31,16 @@ $client = new ShikimoriSDK([
 ]);
 ```
 
-### 2. List achievements
+### 2. List achievement records
 
 ```php
 try {
-    $result = $client->achievement()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Achievement records — iterate directly.
+    $achievements = $client->Achievement()->list();
+    foreach ($achievements as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -88,13 +86,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = ShikimoriSDK::test();
+$client = ShikimoriSDK::test([
+    "entity" => ["achievement" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->achievement()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$achievement = $client->Achievement()->load(["id" => "test01"]);
+print_r($achievement);
 ```
 
 ### Use a custom fetch function
@@ -175,8 +177,8 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `Achievement` | `($data): AchievementEntity` | Create a Achievement entity instance. |
-| `Anime` | `($data): AnimeEntity` | Create a Anime entity instance. |
+| `Achievement` | `($data): AchievementEntity` | Create an Achievement entity instance. |
+| `Anime` | `($data): AnimeEntity` | Create an Anime entity instance. |
 
 ### Entity interface
 
@@ -274,7 +276,7 @@ API path: `/animes`
 
 ### Achievement
 
-Create an instance: `const achievement = client.achievement`
+Create an instance: `$achievement = $client->Achievement();`
 
 #### Operations
 
@@ -294,14 +296,15 @@ Create an instance: `const achievement = client.achievement`
 
 #### Example: List
 
-```ts
-const achievements = await client.achievement.list()
+```php
+// list() returns an array of Achievement records (throws on error).
+$achievements = $client->Achievement()->list();
 ```
 
 
 ### Anime
 
-Create an instance: `const anime = client.anime`
+Create an instance: `$anime = $client->Anime();`
 
 #### Operations
 
@@ -344,8 +347,9 @@ Create an instance: `const anime = client.anime`
 
 #### Example: List
 
-```ts
-const animes = await client.anime.list()
+```php
+// list() returns an array of Anime records (throws on error).
+$animes = $client->Anime()->list();
 ```
 
 
@@ -420,7 +424,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$achievement = $client->achievement();
+$achievement = $client->Achievement();
 $achievement->load(["id" => "example_id"]);
 
 // $achievement->dataGet() now returns the loaded achievement data

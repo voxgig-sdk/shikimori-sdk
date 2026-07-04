@@ -91,7 +91,7 @@ same parameters as `direct()`. Raises on error.
 ## AchievementEntity
 
 ```ruby
-achievement = client.achievement
+achievement = client.Achievement
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ achievement = client.achievement
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.achievement.list(nil)
+results = client.Achievement.list(nil)
 ```
 
 ### Common Methods
@@ -147,7 +147,7 @@ Return the entity name.
 ## AnimeEntity
 
 ```ruby
-anime = client.anime
+anime = client.Anime
 ```
 
 ### Fields
@@ -190,7 +190,7 @@ anime = client.anime
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.anime.list(nil)
+results = client.Anime.list(nil)
 ```
 
 ### Common Methods

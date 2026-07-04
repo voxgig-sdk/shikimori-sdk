@@ -220,41 +220,21 @@ class ShikimoriSDK:
         }
 
 
-    @property
-    def achievement(self):
-        """Idiomatic facade: client.achievement.list() / client.achievement.load({"id": ...})."""
-        from entity.achievement_entity import AchievementEntity
-        cached = getattr(self, "_achievement", None)
-        if cached is None:
-            cached = AchievementEntity(self, None)
-            self._achievement = cached
-        return cached
-
-    def Achievement(self, data=None):
-        # Deprecated: use client.achievement instead.
+    def Achievement(self, data=None) -> "AchievementEntity":
+        """Entity factory: client.Achievement().list({}) / client.Achievement().load({"id": ...})."""
         from entity.achievement_entity import AchievementEntity
         return AchievementEntity(self, data)
 
 
-    @property
-    def anime(self):
-        """Idiomatic facade: client.anime.list() / client.anime.load({"id": ...})."""
-        from entity.anime_entity import AnimeEntity
-        cached = getattr(self, "_anime", None)
-        if cached is None:
-            cached = AnimeEntity(self, None)
-            self._anime = cached
-        return cached
-
-    def Anime(self, data=None):
-        # Deprecated: use client.anime instead.
+    def Anime(self, data=None) -> "AnimeEntity":
+        """Entity factory: client.Anime().list({}) / client.Anime().load({"id": ...})."""
         from entity.anime_entity import AnimeEntity
         return AnimeEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "ShikimoriSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class ShikimoriSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.achievement_entity import AchievementEntity
+    from entity.anime_entity import AnimeEntity

@@ -28,9 +28,11 @@ const client = new ShikimoriSDK({
   apikey: process.env.SHIKIMORI_APIKEY,
 })
 
-// List all achievements
-const achievements = await client.achievement.list()
-console.log(achievements.data)
+// List all achievements (returns Achievement[])
+const achievements = await client.Achievement().list()
+for (const achievement of achievements) {
+  console.log(achievement)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -89,9 +91,10 @@ client = ShikimoriSDK({
     "apikey": os.environ.get("SHIKIMORI_APIKEY"),
 })
 
-# List all achievements
-achievements = client.achievement.list()
-print(achievements)
+# List all achievements (returns a list, raises on error)
+achievements = client.Achievement().list({})
+for achievement in achievements:
+    print(achievement)
 ```
 
 ### PHP
@@ -104,8 +107,8 @@ $client = new ShikimoriSDK([
     "apikey" => getenv("SHIKIMORI_APIKEY"),
 ]);
 
-// List all achievements (throws on error)
-$achievements = $client->achievement()->list();
+// List all achievements (returns an array; throws on error)
+$achievements = $client->Achievement()->list();
 print_r($achievements);
 ```
 
@@ -132,8 +135,8 @@ client = ShikimoriSDK.new({
   "apikey" => ENV["SHIKIMORI_APIKEY"],
 })
 
-# List all achievements
-achievements = client.achievement.list
+# List all achievements (returns an Array; raises on error)
+achievements = client.Achievement.list
 puts achievements
 ```
 
@@ -147,7 +150,7 @@ local client = sdk.new({
 })
 
 -- List all achievements
-local achievements, err = client:achievement():list()
+local achievements, err = client:Achievement():list()
 print(achievements)
 ```
 
@@ -160,22 +163,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = ShikimoriSDK.test()
-const result = await client.achievement.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const achievement = await client.Achievement().load({ id: 1 })
+// achievement is a bare Achievement populated with mock data
+console.log(achievement)
 ```
 
 ### Python
 
 ```python
 client = ShikimoriSDK.test()
-result = client.achievement.load({"id": "test01"})
+achievement = client.Achievement().load({"id": "test01"})
+print(achievement)
 ```
 
 ### PHP
 
 ```php
-$client = ShikimoriSDK::test();
-$result = $client->achievement()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = ShikimoriSDK::test([
+    "entity" => ["achievement" => ["test01" => ["id" => "test01"]]],
+]);
+$achievement = $client->Achievement()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -190,15 +198,18 @@ result, err := client.Achievement(nil).Load(
 ### Ruby
 
 ```ruby
-client = ShikimoriSDK.test
-result = client.achievement.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = ShikimoriSDK.test({
+  "entity" => { "achievement" => { "test01" => { "id" => "test01" } } },
+})
+achievement = client.Achievement.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:achievement():load({ id = "test01" })
+local result, err = client:Achievement():load({ id = "test01" })
 ```
 
 ## How it works
@@ -246,6 +257,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

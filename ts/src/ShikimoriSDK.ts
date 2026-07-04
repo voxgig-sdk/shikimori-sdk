@@ -205,28 +205,14 @@ class ShikimoriSDK {
 
 
 
-  _achievement?: AchievementEntity
-
-  // Idiomatic facade: `client.achievement.list()` / `client.achievement.load({ id })`.
-  get achievement(): AchievementEntity {
-    return (this._achievement ??= new AchievementEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.achievement` instead. */
+  // Entity access: `client.Achievement().list()` / `client.Achievement().load({ id })`.
   Achievement(data?: any) {
     const self = this
     return new AchievementEntity(self,data)
   }
 
 
-  _anime?: AnimeEntity
-
-  // Idiomatic facade: `client.anime.list()` / `client.anime.load({ id })`.
-  get anime(): AnimeEntity {
-    return (this._anime ??= new AnimeEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.anime` instead. */
+  // Entity access: `client.Anime().list()` / `client.Anime().load({ id })`.
   Anime(data?: any) {
     const self = this
     return new AnimeEntity(self,data)

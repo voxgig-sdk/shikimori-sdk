@@ -208,26 +208,14 @@ class ShikimoriSDK
   end
 
 
-  # Idiomatic facade: client.achievement.list / client.achievement.load({ "id" => ... })
-  def achievement
-    require_relative 'entity/achievement_entity'
-    @achievement ||= AchievementEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.achievement instead.
+  # Canonical facade: client.Achievement.list / client.Achievement.load({ "id" => ... })
   def Achievement(data = nil)
     require_relative 'entity/achievement_entity'
     AchievementEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.anime.list / client.anime.load({ "id" => ... })
-  def anime
-    require_relative 'entity/anime_entity'
-    @anime ||= AnimeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.anime instead.
+  # Canonical facade: client.Anime.list / client.Anime.load({ "id" => ... })
   def Anime(data = nil)
     require_relative 'entity/anime_entity'
     AnimeEntity.new(self, data)

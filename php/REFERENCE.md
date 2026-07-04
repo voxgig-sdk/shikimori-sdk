@@ -90,7 +90,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## AchievementEntity
 
 ```php
-$achievement = $client->achievement();
+$achievement = $client->Achievement();
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ $achievement = $client->achievement();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->achievement()->list([]);
+$results = $client->Achievement()->list([]);
 ```
 
 ### Common Methods
@@ -146,7 +146,7 @@ Return the entity name.
 ## AnimeEntity
 
 ```php
-$anime = $client->anime();
+$anime = $client->Anime();
 ```
 
 ### Fields
@@ -189,7 +189,7 @@ $anime = $client->anime();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->anime()->list([]);
+$results = $client->Anime()->list([]);
 ```
 
 ### Common Methods

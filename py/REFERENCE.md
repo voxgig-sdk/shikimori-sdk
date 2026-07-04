@@ -85,7 +85,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AchievementEntity
 
 ```python
-achievement = client.achievement
+achievement = client.Achievement()
 ```
 
 ### Fields
@@ -105,7 +105,9 @@ achievement = client.achievement
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.achievement.list({})
+results = client.Achievement().list({})
+for achievement in results:
+    print(achievement)
 ```
 
 ### Common Methods
@@ -140,7 +142,7 @@ Return the entity name.
 ## AnimeEntity
 
 ```python
-anime = client.anime
+anime = client.Anime()
 ```
 
 ### Fields
@@ -183,7 +185,9 @@ anime = client.anime
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.anime.list({})
+results = client.Anime().list({})
+for anime in results:
+    print(anime)
 ```
 
 ### Common Methods

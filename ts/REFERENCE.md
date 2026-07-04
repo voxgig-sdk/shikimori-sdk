@@ -122,7 +122,7 @@ Alias for `ShikimoriSDK.test()`.
 ## AchievementEntity
 
 ```ts
-const achievement = client.achievement
+const achievement = client.Achievement()
 ```
 
 ### Fields
@@ -142,7 +142,7 @@ const achievement = client.achievement
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.achievement.list()
+const results = await client.Achievement().list()
 ```
 
 ### Common Methods
@@ -176,7 +176,7 @@ Return a copy of the entity options.
 ## AnimeEntity
 
 ```ts
-const anime = client.anime
+const anime = client.Anime()
 ```
 
 ### Fields
@@ -219,7 +219,7 @@ const anime = client.anime
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.anime.list()
+const results = await client.Anime().list()
 ```
 
 ### Common Methods

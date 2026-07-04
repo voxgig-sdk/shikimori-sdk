@@ -4,91 +4,91 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Achievement:
-    id: Optional[int] = None
-    level: Optional[int] = None
-    neko_id: Optional[str] = None
-    progress: Optional[int] = None
-    user_id: Optional[int] = None
+class Achievement(TypedDict, total=False):
+    id: int
+    level: int
+    neko_id: str
+    progress: int
+    user_id: int
 
 
-@dataclass
-class AchievementListMatch:
-    id: Optional[int] = None
-    level: Optional[int] = None
-    neko_id: Optional[str] = None
-    progress: Optional[int] = None
-    user_id: Optional[int] = None
+class AchievementListMatch(TypedDict, total=False):
+    id: int
+    level: int
+    neko_id: str
+    progress: int
+    user_id: int
 
 
-@dataclass
-class Anime:
-    aired_on: Optional[str] = None
-    anon: Optional[bool] = None
-    description: Optional[str] = None
-    description_html: Optional[str] = None
-    duration: Optional[int] = None
-    english: Optional[list] = None
-    episode: Optional[int] = None
-    episodes_aired: Optional[int] = None
-    favoured: Optional[bool] = None
-    franchise: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[dict] = None
-    japanese: Optional[list] = None
-    kind: Optional[str] = None
-    myanimelist_id: Optional[int] = None
-    name: Optional[str] = None
-    ongoing: Optional[bool] = None
-    rates_scores_stat: Optional[list] = None
-    rates_statuses_stat: Optional[list] = None
-    rating: Optional[str] = None
-    released_on: Optional[str] = None
-    russian: Optional[str] = None
-    score: Optional[str] = None
-    status: Optional[str] = None
-    synonym: Optional[list] = None
-    thread_id: Optional[int] = None
-    topic_id: Optional[int] = None
-    url: Optional[str] = None
+class Anime(TypedDict, total=False):
+    aired_on: str
+    anon: bool
+    description: str
+    description_html: str
+    duration: int
+    english: list
+    episode: int
+    episodes_aired: int
+    favoured: bool
+    franchise: str
+    id: int
+    image: dict
+    japanese: list
+    kind: str
+    myanimelist_id: int
+    name: str
+    ongoing: bool
+    rates_scores_stat: list
+    rates_statuses_stat: list
+    rating: str
+    released_on: str
+    russian: str
+    score: str
+    status: str
+    synonym: list
+    thread_id: int
+    topic_id: int
+    url: str
 
 
-@dataclass
-class AnimeListMatch:
-    aired_on: Optional[str] = None
-    anon: Optional[bool] = None
-    description: Optional[str] = None
-    description_html: Optional[str] = None
-    duration: Optional[int] = None
-    english: Optional[list] = None
-    episode: Optional[int] = None
-    episodes_aired: Optional[int] = None
-    favoured: Optional[bool] = None
-    franchise: Optional[str] = None
-    id: Optional[int] = None
-    image: Optional[dict] = None
-    japanese: Optional[list] = None
-    kind: Optional[str] = None
-    myanimelist_id: Optional[int] = None
-    name: Optional[str] = None
-    ongoing: Optional[bool] = None
-    rates_scores_stat: Optional[list] = None
-    rates_statuses_stat: Optional[list] = None
-    rating: Optional[str] = None
-    released_on: Optional[str] = None
-    russian: Optional[str] = None
-    score: Optional[str] = None
-    status: Optional[str] = None
-    synonym: Optional[list] = None
-    thread_id: Optional[int] = None
-    topic_id: Optional[int] = None
-    url: Optional[str] = None
-
+class AnimeListMatch(TypedDict, total=False):
+    aired_on: str
+    anon: bool
+    description: str
+    description_html: str
+    duration: int
+    english: list
+    episode: int
+    episodes_aired: int
+    favoured: bool
+    franchise: str
+    id: int
+    image: dict
+    japanese: list
+    kind: str
+    myanimelist_id: int
+    name: str
+    ongoing: bool
+    rates_scores_stat: list
+    rates_statuses_stat: list
+    rating: str
+    released_on: str
+    russian: str
+    score: str
+    status: str
+    synonym: list
+    thread_id: int
+    topic_id: int
+    url: str
