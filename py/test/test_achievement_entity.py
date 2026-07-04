@@ -50,8 +50,7 @@ class TestAchievementEntity:
         achievement_ref01_ent = client.Achievement(None)
         achievement_ref01_match = {}
 
-        achievement_ref01_list_result, err = achievement_ref01_ent.list(achievement_ref01_match, None)
-        assert err is None
+        achievement_ref01_list_result = achievement_ref01_ent.list(achievement_ref01_match, None)
         assert isinstance(achievement_ref01_list_result, list)
 
 

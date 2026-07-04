@@ -43,8 +43,7 @@ class AchievementEntityTest < Minitest::Test
     achievement_ref01_ent = client.Achievement(nil)
     achievement_ref01_match = {}
 
-    achievement_ref01_list_result, err = achievement_ref01_ent.list(achievement_ref01_match, nil)
-    assert_nil err
+    achievement_ref01_list_result = achievement_ref01_ent.list(achievement_ref01_match, nil)
     assert achievement_ref01_list_result.is_a?(Array)
 
   end

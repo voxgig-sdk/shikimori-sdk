@@ -3,6 +3,8 @@
 import { AchievementEntity } from './entity/AchievementEntity'
 import { AnimeEntity } from './entity/AnimeEntity'
 
+export type * from './ShikimoriTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class ShikimoriSDK {
 
 
 
+  _achievement?: AchievementEntity
+
+  // Idiomatic facade: `client.achievement.list()` / `client.achievement.load({ id })`.
+  get achievement(): AchievementEntity {
+    return (this._achievement ??= new AchievementEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.achievement` instead. */
   Achievement(data?: any) {
     const self = this
     return new AchievementEntity(self,data)
   }
 
 
+  _anime?: AnimeEntity
+
+  // Idiomatic facade: `client.anime.list()` / `client.anime.load({ id })`.
+  get anime(): AnimeEntity {
+    return (this._anime ??= new AnimeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.anime` instead. */
   Anime(data?: any) {
     const self = this
     return new AnimeEntity(self,data)

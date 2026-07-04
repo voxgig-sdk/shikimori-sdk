@@ -50,8 +50,7 @@ class AnimeEntityTest extends TestCase
         $anime_ref01_ent = $client->Anime(null);
         $anime_ref01_match = [];
 
-        [$anime_ref01_list_result, $err] = $anime_ref01_ent->list($anime_ref01_match, null);
-        $this->assertNull($err);
+        $anime_ref01_list_result = $anime_ref01_ent->list($anime_ref01_match, null);
         $this->assertIsArray($anime_ref01_list_result);
 
     }

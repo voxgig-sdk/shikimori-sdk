@@ -50,8 +50,7 @@ class AchievementEntityTest extends TestCase
         $achievement_ref01_ent = $client->Achievement(null);
         $achievement_ref01_match = [];
 
-        [$achievement_ref01_list_result, $err] = $achievement_ref01_ent->list($achievement_ref01_match, null);
-        $this->assertNull($err);
+        $achievement_ref01_list_result = $achievement_ref01_ent->list($achievement_ref01_match, null);
         $this->assertIsArray($achievement_ref01_list_result);
 
     }

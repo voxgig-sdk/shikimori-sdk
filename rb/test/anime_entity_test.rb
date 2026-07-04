@@ -43,8 +43,7 @@ class AnimeEntityTest < Minitest::Test
     anime_ref01_ent = client.Anime(nil)
     anime_ref01_match = {}
 
-    anime_ref01_list_result, err = anime_ref01_ent.list(anime_ref01_match, nil)
-    assert_nil err
+    anime_ref01_list_result = anime_ref01_ent.list(anime_ref01_match, nil)
     assert anime_ref01_list_result.is_a?(Array)
 
   end

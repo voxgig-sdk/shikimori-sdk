@@ -9,9 +9,12 @@ The TypeScript SDK for the Shikimori API — a type-safe, entity-oriented client
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/shikimori
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/shikimori-sdk/releases](https://github.com/voxgig-sdk/shikimori-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,7 +23,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { ShikimoriSDK } from 'shikimori'
+import { ShikimoriSDK } from '@voxgig-sdk/shikimori'
 
 const client = new ShikimoriSDK({
   apikey: process.env.SHIKIMORI_APIKEY,
@@ -30,7 +33,7 @@ const client = new ShikimoriSDK({
 ### 2. List achievements
 
 ```ts
-const result = await client.Achievement().list()
+const result = await client.achievement.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = ShikimoriSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.achievement.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -98,7 +101,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.achievement
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -310,7 +313,7 @@ API path: `/animes`
 
 ### Achievement
 
-Create an instance: `const achievement = client.Achievement()`
+Create an instance: `const achievement = client.achievement`
 
 #### Operations
 
@@ -331,13 +334,13 @@ Create an instance: `const achievement = client.Achievement()`
 #### Example: List
 
 ```ts
-const achievements = await client.Achievement().list()
+const achievements = await client.achievement.list()
 ```
 
 
 ### Anime
 
-Create an instance: `const anime = client.Anime()`
+Create an instance: `const anime = client.anime`
 
 #### Operations
 
@@ -381,7 +384,7 @@ Create an instance: `const anime = client.Anime()`
 #### Example: List
 
 ```ts
-const animes = await client.Anime().list()
+const animes = await client.anime.list()
 ```
 
 
@@ -442,7 +445,7 @@ shikimori/
 Import the SDK from the package root:
 
 ```ts
-import { ShikimoriSDK } from 'shikimori'
+import { ShikimoriSDK } from '@voxgig-sdk/shikimori'
 ```
 
 ### Entity state
@@ -452,11 +455,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const achievement = client.achievement
+await achievement.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// achievement.data() now returns the loaded achievement data
+// achievement.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

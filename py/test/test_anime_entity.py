@@ -50,8 +50,7 @@ class TestAnimeEntity:
         anime_ref01_ent = client.Anime(None)
         anime_ref01_match = {}
 
-        anime_ref01_list_result, err = anime_ref01_ent.list(anime_ref01_match, None)
-        assert err is None
+        anime_ref01_list_result = anime_ref01_ent.list(anime_ref01_match, None)
         assert isinstance(anime_ref01_list_result, list)
 
 

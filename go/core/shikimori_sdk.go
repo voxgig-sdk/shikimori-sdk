@@ -245,11 +245,17 @@ func (sdk *ShikimoriSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// Achievement returns a Achievement entity bound to this client.
+// Idiomatic usage: client.Achievement(nil).List(nil, nil) or
+// client.Achievement(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *ShikimoriSDK) Achievement(data map[string]any) ShikimoriEntity {
 	return NewAchievementEntityFunc(sdk, data)
 }
 
 
+// Anime returns a Anime entity bound to this client.
+// Idiomatic usage: client.Anime(nil).List(nil, nil) or
+// client.Anime(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *ShikimoriSDK) Anime(data map[string]any) ShikimoriEntity {
 	return NewAnimeEntityFunc(sdk, data)
 }
