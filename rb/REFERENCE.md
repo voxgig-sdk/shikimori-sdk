@@ -8,7 +8,7 @@ Complete API reference for the Shikimori Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'shikimori_sdk'
+require_relative 'Shikimori_sdk'
 
 client = ShikimoriSDK.new(options)
 ```
@@ -98,20 +98,20 @@ achievement = client.Achievement
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$INTEGER`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `neko_id` | ``$STRING`` | No |  |
-| `progress` | ``$INTEGER`` | No |  |
-| `user_id` | ``$INTEGER`` | No |  |
+| `id` | `Integer` | No |  |
+| `level` | `Integer` | No |  |
+| `neko_id` | `String` | No |  |
+| `progress` | `Integer` | No |  |
+| `user_id` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Achievement.list(nil)
+results = client.Achievement.list
 ```
 
 ### Common Methods
@@ -154,43 +154,43 @@ anime = client.Anime
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired_on` | ``$STRING`` | No |  |
-| `anon` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `description_html` | ``$STRING`` | No |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `english` | ``$ARRAY`` | No |  |
-| `episode` | ``$INTEGER`` | No |  |
-| `episodes_aired` | ``$INTEGER`` | No |  |
-| `favoured` | ``$BOOLEAN`` | No |  |
-| `franchise` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `japanese` | ``$ARRAY`` | No |  |
-| `kind` | ``$STRING`` | No |  |
-| `myanimelist_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `ongoing` | ``$BOOLEAN`` | No |  |
-| `rates_scores_stat` | ``$ARRAY`` | No |  |
-| `rates_statuses_stat` | ``$ARRAY`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `released_on` | ``$STRING`` | No |  |
-| `russian` | ``$STRING`` | No |  |
-| `score` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `synonym` | ``$ARRAY`` | No |  |
-| `thread_id` | ``$INTEGER`` | No |  |
-| `topic_id` | ``$INTEGER`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `aired_on` | `String` | No |  |
+| `anon` | `Boolean` | No |  |
+| `description` | `String` | No |  |
+| `description_html` | `String` | No |  |
+| `duration` | `Integer` | No |  |
+| `english` | `Array` | No |  |
+| `episode` | `Integer` | No |  |
+| `episodes_aired` | `Integer` | No |  |
+| `favoured` | `Boolean` | No |  |
+| `franchise` | `String` | No |  |
+| `id` | `Integer` | No |  |
+| `image` | `Hash` | No |  |
+| `japanese` | `Array` | No |  |
+| `kind` | `String` | No |  |
+| `myanimelist_id` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `ongoing` | `Boolean` | No |  |
+| `rates_scores_stat` | `Array` | No |  |
+| `rates_statuses_stat` | `Array` | No |  |
+| `rating` | `String` | No |  |
+| `released_on` | `String` | No |  |
+| `russian` | `String` | No |  |
+| `score` | `String` | No |  |
+| `status` | `String` | No |  |
+| `synonym` | `Array` | No |  |
+| `thread_id` | `Integer` | No |  |
+| `topic_id` | `Integer` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Anime.list(nil)
+results = client.Anime.list
 ```
 
 ### Common Methods

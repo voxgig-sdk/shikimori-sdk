@@ -33,7 +33,7 @@ Achievement = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Achievement#list (any subset of Achievement fields).
+# Request payload for Achievement#list.
 #
 # @!attribute [rw] id
 #   @return [Integer, nil]
@@ -175,7 +175,7 @@ Anime = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Anime#list (any subset of Anime fields).
+# Request payload for Anime#list.
 #
 # @!attribute [rw] aired_on
 #   @return [String, nil]

@@ -22,7 +22,7 @@ class Achievement
     public ?int $user_id = null;
 }
 
-/** Match filter for Achievement#list (any subset of Achievement fields). */
+/** Request payload for Achievement#list. */
 class AchievementListMatch
 {
     public ?int $id = null;
@@ -65,7 +65,7 @@ class Anime
     public ?string $url = null;
 }
 
-/** Match filter for Anime#list (any subset of Anime fields). */
+/** Request payload for Anime#list. */
 class AnimeListMatch
 {
     public ?string $aired_on = null;

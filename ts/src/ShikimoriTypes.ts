@@ -13,7 +13,13 @@ export interface Achievement {
   user_id?: number
 }
 
-export type AchievementListMatch = Partial<Achievement>
+export interface AchievementListMatch {
+  id?: number
+  level?: number
+  neko_id?: string
+  progress?: number
+  user_id?: number
+}
 
 export interface Anime {
   aired_on?: string
@@ -46,5 +52,34 @@ export interface Anime {
   url?: string
 }
 
-export type AnimeListMatch = Partial<Anime>
+export interface AnimeListMatch {
+  aired_on?: string
+  anon?: boolean
+  description?: string
+  description_html?: string
+  duration?: number
+  english?: any[]
+  episode?: number
+  episodes_aired?: number
+  favoured?: boolean
+  franchise?: string
+  id?: number
+  image?: Record<string, any>
+  japanese?: any[]
+  kind?: string
+  myanimelist_id?: number
+  name?: string
+  ongoing?: boolean
+  rates_scores_stat?: any[]
+  rates_statuses_stat?: any[]
+  rating?: string
+  released_on?: string
+  russian?: string
+  score?: string
+  status?: string
+  synonym?: any[]
+  thread_id?: number
+  topic_id?: number
+  url?: string
+}
 

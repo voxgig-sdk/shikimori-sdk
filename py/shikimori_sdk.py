@@ -221,13 +221,13 @@ class ShikimoriSDK:
 
 
     def Achievement(self, data=None) -> "AchievementEntity":
-        """Entity factory: client.Achievement().list({}) / client.Achievement().load({"id": ...})."""
+        """Entity factory: client.Achievement().list() / client.Achievement().load({"id": ...})."""
         from entity.achievement_entity import AchievementEntity
         return AchievementEntity(self, data)
 
 
     def Anime(self, data=None) -> "AnimeEntity":
-        """Entity factory: client.Anime().list({}) / client.Anime().load({"id": ...})."""
+        """Entity factory: client.Anime().list() / client.Anime().load({"id": ...})."""
         from entity.anime_entity import AnimeEntity
         return AnimeEntity(self, data)
 

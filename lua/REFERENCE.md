@@ -95,11 +95,11 @@ local achievement = client:Achievement(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$INTEGER`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `neko_id` | ``$STRING`` | No |  |
-| `progress` | ``$INTEGER`` | No |  |
-| `user_id` | ``$INTEGER`` | No |  |
+| `id` | `number` | No |  |
+| `level` | `number` | No |  |
+| `neko_id` | `string` | No |  |
+| `progress` | `number` | No |  |
+| `user_id` | `number` | No |  |
 
 ### Operations
 
@@ -151,34 +151,34 @@ local anime = client:Anime(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired_on` | ``$STRING`` | No |  |
-| `anon` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `description_html` | ``$STRING`` | No |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `english` | ``$ARRAY`` | No |  |
-| `episode` | ``$INTEGER`` | No |  |
-| `episodes_aired` | ``$INTEGER`` | No |  |
-| `favoured` | ``$BOOLEAN`` | No |  |
-| `franchise` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `japanese` | ``$ARRAY`` | No |  |
-| `kind` | ``$STRING`` | No |  |
-| `myanimelist_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `ongoing` | ``$BOOLEAN`` | No |  |
-| `rates_scores_stat` | ``$ARRAY`` | No |  |
-| `rates_statuses_stat` | ``$ARRAY`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `released_on` | ``$STRING`` | No |  |
-| `russian` | ``$STRING`` | No |  |
-| `score` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `synonym` | ``$ARRAY`` | No |  |
-| `thread_id` | ``$INTEGER`` | No |  |
-| `topic_id` | ``$INTEGER`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `aired_on` | `string` | No |  |
+| `anon` | `boolean` | No |  |
+| `description` | `string` | No |  |
+| `description_html` | `string` | No |  |
+| `duration` | `number` | No |  |
+| `english` | `table` | No |  |
+| `episode` | `number` | No |  |
+| `episodes_aired` | `number` | No |  |
+| `favoured` | `boolean` | No |  |
+| `franchise` | `string` | No |  |
+| `id` | `number` | No |  |
+| `image` | `table` | No |  |
+| `japanese` | `table` | No |  |
+| `kind` | `string` | No |  |
+| `myanimelist_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `ongoing` | `boolean` | No |  |
+| `rates_scores_stat` | `table` | No |  |
+| `rates_statuses_stat` | `table` | No |  |
+| `rating` | `string` | No |  |
+| `released_on` | `string` | No |  |
+| `russian` | `string` | No |  |
+| `score` | `string` | No |  |
+| `status` | `string` | No |  |
+| `synonym` | `table` | No |  |
+| `thread_id` | `number` | No |  |
+| `topic_id` | `number` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

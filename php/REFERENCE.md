@@ -50,11 +50,11 @@ Create a new `AchievementEntity` instance. Pass `null` for no initial data.
 
 Create a new `AnimeEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): ShikimoriUtility`
 
 Return a copy of the SDK utility object.
 
@@ -97,37 +97,37 @@ $achievement = $client->Achievement();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$INTEGER`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `neko_id` | ``$STRING`` | No |  |
-| `progress` | ``$INTEGER`` | No |  |
-| `user_id` | ``$INTEGER`` | No |  |
+| `id` | `int` | No |  |
+| `level` | `int` | No |  |
+| `neko_id` | `string` | No |  |
+| `progress` | `int` | No |  |
+| `user_id` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Achievement()->list([]);
+$results = $client->Achievement()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -136,7 +136,7 @@ Set the entity match criteria.
 Create a new `AchievementEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -153,60 +153,60 @@ $anime = $client->Anime();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired_on` | ``$STRING`` | No |  |
-| `anon` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `description_html` | ``$STRING`` | No |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `english` | ``$ARRAY`` | No |  |
-| `episode` | ``$INTEGER`` | No |  |
-| `episodes_aired` | ``$INTEGER`` | No |  |
-| `favoured` | ``$BOOLEAN`` | No |  |
-| `franchise` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `japanese` | ``$ARRAY`` | No |  |
-| `kind` | ``$STRING`` | No |  |
-| `myanimelist_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `ongoing` | ``$BOOLEAN`` | No |  |
-| `rates_scores_stat` | ``$ARRAY`` | No |  |
-| `rates_statuses_stat` | ``$ARRAY`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `released_on` | ``$STRING`` | No |  |
-| `russian` | ``$STRING`` | No |  |
-| `score` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `synonym` | ``$ARRAY`` | No |  |
-| `thread_id` | ``$INTEGER`` | No |  |
-| `topic_id` | ``$INTEGER`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `aired_on` | `string` | No |  |
+| `anon` | `bool` | No |  |
+| `description` | `string` | No |  |
+| `description_html` | `string` | No |  |
+| `duration` | `int` | No |  |
+| `english` | `array` | No |  |
+| `episode` | `int` | No |  |
+| `episodes_aired` | `int` | No |  |
+| `favoured` | `bool` | No |  |
+| `franchise` | `string` | No |  |
+| `id` | `int` | No |  |
+| `image` | `array` | No |  |
+| `japanese` | `array` | No |  |
+| `kind` | `string` | No |  |
+| `myanimelist_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `ongoing` | `bool` | No |  |
+| `rates_scores_stat` | `array` | No |  |
+| `rates_statuses_stat` | `array` | No |  |
+| `rating` | `string` | No |  |
+| `released_on` | `string` | No |  |
+| `russian` | `string` | No |  |
+| `score` | `string` | No |  |
+| `status` | `string` | No |  |
+| `synonym` | `array` | No |  |
+| `thread_id` | `int` | No |  |
+| `topic_id` | `int` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Anime()->list([]);
+$results = $client->Anime()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -215,7 +215,7 @@ Set the entity match criteria.
 Create a new `AnimeEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

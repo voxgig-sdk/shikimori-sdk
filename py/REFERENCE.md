@@ -92,20 +92,20 @@ achievement = client.Achievement()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$INTEGER`` | No |  |
-| `level` | ``$INTEGER`` | No |  |
-| `neko_id` | ``$STRING`` | No |  |
-| `progress` | ``$INTEGER`` | No |  |
-| `user_id` | ``$INTEGER`` | No |  |
+| `id` | `int` | No |  |
+| `level` | `int` | No |  |
+| `neko_id` | `str` | No |  |
+| `progress` | `int` | No |  |
+| `user_id` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Achievement().list({})
+results = client.Achievement().list()
 for achievement in results:
     print(achievement)
 ```
@@ -149,43 +149,43 @@ anime = client.Anime()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired_on` | ``$STRING`` | No |  |
-| `anon` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `description_html` | ``$STRING`` | No |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `english` | ``$ARRAY`` | No |  |
-| `episode` | ``$INTEGER`` | No |  |
-| `episodes_aired` | ``$INTEGER`` | No |  |
-| `favoured` | ``$BOOLEAN`` | No |  |
-| `franchise` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `japanese` | ``$ARRAY`` | No |  |
-| `kind` | ``$STRING`` | No |  |
-| `myanimelist_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `ongoing` | ``$BOOLEAN`` | No |  |
-| `rates_scores_stat` | ``$ARRAY`` | No |  |
-| `rates_statuses_stat` | ``$ARRAY`` | No |  |
-| `rating` | ``$STRING`` | No |  |
-| `released_on` | ``$STRING`` | No |  |
-| `russian` | ``$STRING`` | No |  |
-| `score` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `synonym` | ``$ARRAY`` | No |  |
-| `thread_id` | ``$INTEGER`` | No |  |
-| `topic_id` | ``$INTEGER`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `aired_on` | `str` | No |  |
+| `anon` | `bool` | No |  |
+| `description` | `str` | No |  |
+| `description_html` | `str` | No |  |
+| `duration` | `int` | No |  |
+| `english` | `list` | No |  |
+| `episode` | `int` | No |  |
+| `episodes_aired` | `int` | No |  |
+| `favoured` | `bool` | No |  |
+| `franchise` | `str` | No |  |
+| `id` | `int` | No |  |
+| `image` | `dict` | No |  |
+| `japanese` | `list` | No |  |
+| `kind` | `str` | No |  |
+| `myanimelist_id` | `int` | No |  |
+| `name` | `str` | No |  |
+| `ongoing` | `bool` | No |  |
+| `rates_scores_stat` | `list` | No |  |
+| `rates_statuses_stat` | `list` | No |  |
+| `rating` | `str` | No |  |
+| `released_on` | `str` | No |  |
+| `russian` | `str` | No |  |
+| `score` | `str` | No |  |
+| `status` | `str` | No |  |
+| `synonym` | `list` | No |  |
+| `thread_id` | `int` | No |  |
+| `topic_id` | `int` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Anime().list({})
+results = client.Anime().list()
 for anime in results:
     print(anime)
 ```

@@ -17,8 +17,7 @@ type Achievement struct {
 	UserId *int `json:"user_id,omitempty"`
 }
 
-// AchievementListMatch mirrors the achievement fields as an all-optional match
-// filter (Go analog of Partial<Achievement>).
+// AchievementListMatch is the typed request payload for Achievement.ListTyped.
 type AchievementListMatch struct {
 	Id *int `json:"id,omitempty"`
 	Level *int `json:"level,omitempty"`
@@ -59,8 +58,7 @@ type Anime struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// AnimeListMatch mirrors the anime fields as an all-optional match
-// filter (Go analog of Partial<Anime>).
+// AnimeListMatch is the typed request payload for Anime.ListTyped.
 type AnimeListMatch struct {
 	AiredOn *string `json:"aired_on,omitempty"`
 	Anon *bool `json:"anon,omitempty"`
