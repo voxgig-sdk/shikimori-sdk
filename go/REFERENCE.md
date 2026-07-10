@@ -96,6 +96,7 @@ same parameters as `Direct()`.
 
 ```go
 achievement := client.Achievement(nil)
+fmt.Println(achievement.GetName()) // "achievement"
 ```
 
 ### Fields
@@ -116,6 +117,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Achievement(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -146,6 +151,7 @@ Return the entity name.
 
 ```go
 anime := client.Anime(nil)
+fmt.Println(anime.GetName()) // "anime"
 ```
 
 ### Fields
@@ -189,6 +195,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Anime(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
