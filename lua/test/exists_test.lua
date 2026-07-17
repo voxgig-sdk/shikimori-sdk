@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Shikimori SDK exists test
 
 local sdk = require("shikimori_sdk")
 
