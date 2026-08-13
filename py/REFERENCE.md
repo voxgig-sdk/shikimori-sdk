@@ -150,12 +150,12 @@ anime = client.Anime()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `aired_on` | `str` | No |  |
-| `anon` | `bool` | No |  |
+| `anons` | `bool` | No |  |
 | `description` | `str` | No |  |
 | `description_html` | `str` | No |  |
 | `duration` | `int` | No |  |
 | `english` | `list` | No |  |
-| `episode` | `int` | No |  |
+| `episodes` | `int` | No |  |
 | `episodes_aired` | `int` | No |  |
 | `favoured` | `bool` | No |  |
 | `franchise` | `str` | No |  |
@@ -166,14 +166,14 @@ anime = client.Anime()
 | `myanimelist_id` | `int` | No |  |
 | `name` | `str` | No |  |
 | `ongoing` | `bool` | No |  |
-| `rates_scores_stat` | `list` | No |  |
-| `rates_statuses_stat` | `list` | No |  |
+| `rates_scores_stats` | `list` | No |  |
+| `rates_statuses_stats` | `list` | No |  |
 | `rating` | `str` | No |  |
 | `released_on` | `str` | No |  |
 | `russian` | `str` | No |  |
 | `score` | `str` | No |  |
 | `status` | `str` | No |  |
-| `synonym` | `list` | No |  |
+| `synonyms` | `list` | No |  |
 | `thread_id` | `int` | No |  |
 | `topic_id` | `int` | No |  |
 | `url` | `str` | No |  |

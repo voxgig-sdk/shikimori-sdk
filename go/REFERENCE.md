@@ -159,12 +159,12 @@ fmt.Println(anime.GetName()) // "anime"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `aired_on` | `string` | No |  |
-| `anon` | `bool` | No |  |
+| `anons` | `bool` | No |  |
 | `description` | `string` | No |  |
 | `description_html` | `string` | No |  |
 | `duration` | `int` | No |  |
 | `english` | `[]any` | No |  |
-| `episode` | `int` | No |  |
+| `episodes` | `int` | No |  |
 | `episodes_aired` | `int` | No |  |
 | `favoured` | `bool` | No |  |
 | `franchise` | `string` | No |  |
@@ -175,14 +175,14 @@ fmt.Println(anime.GetName()) // "anime"
 | `myanimelist_id` | `int` | No |  |
 | `name` | `string` | No |  |
 | `ongoing` | `bool` | No |  |
-| `rates_scores_stat` | `[]any` | No |  |
-| `rates_statuses_stat` | `[]any` | No |  |
+| `rates_scores_stats` | `[]any` | No |  |
+| `rates_statuses_stats` | `[]any` | No |  |
 | `rating` | `string` | No |  |
 | `released_on` | `string` | No |  |
 | `russian` | `string` | No |  |
 | `score` | `string` | No |  |
 | `status` | `string` | No |  |
-| `synonym` | `[]any` | No |  |
+| `synonyms` | `[]any` | No |  |
 | `thread_id` | `int` | No |  |
 | `topic_id` | `int` | No |  |
 | `url` | `string` | No |  |

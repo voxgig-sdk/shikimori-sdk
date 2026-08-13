@@ -154,12 +154,12 @@ $anime = $client->Anime();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `aired_on` | `string` | No |  |
-| `anon` | `bool` | No |  |
+| `anons` | `bool` | No |  |
 | `description` | `string` | No |  |
 | `description_html` | `string` | No |  |
 | `duration` | `int` | No |  |
 | `english` | `array` | No |  |
-| `episode` | `int` | No |  |
+| `episodes` | `int` | No |  |
 | `episodes_aired` | `int` | No |  |
 | `favoured` | `bool` | No |  |
 | `franchise` | `string` | No |  |
@@ -170,14 +170,14 @@ $anime = $client->Anime();
 | `myanimelist_id` | `int` | No |  |
 | `name` | `string` | No |  |
 | `ongoing` | `bool` | No |  |
-| `rates_scores_stat` | `array` | No |  |
-| `rates_statuses_stat` | `array` | No |  |
+| `rates_scores_stats` | `array` | No |  |
+| `rates_statuses_stats` | `array` | No |  |
 | `rating` | `string` | No |  |
 | `released_on` | `string` | No |  |
 | `russian` | `string` | No |  |
 | `score` | `string` | No |  |
 | `status` | `string` | No |  |
-| `synonym` | `array` | No |  |
+| `synonyms` | `array` | No |  |
 | `thread_id` | `int` | No |  |
 | `topic_id` | `int` | No |  |
 | `url` | `string` | No |  |

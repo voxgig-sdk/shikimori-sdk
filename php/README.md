@@ -127,7 +127,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = ShikimoriSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $achievement = $client->Achievement()->list();
 print_r($achievement);
 ```
@@ -229,7 +230,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -266,12 +267,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `aired_on` |  |
-| `anon` |  |
+| `anons` |  |
 | `description` |  |
 | `description_html` |  |
 | `duration` |  |
 | `english` |  |
-| `episode` |  |
+| `episodes` |  |
 | `episodes_aired` |  |
 | `favoured` |  |
 | `franchise` |  |
@@ -282,14 +283,14 @@ API path: `/achievements`
 | `myanimelist_id` |  |
 | `name` |  |
 | `ongoing` |  |
-| `rates_scores_stat` |  |
-| `rates_statuses_stat` |  |
+| `rates_scores_stats` |  |
+| `rates_statuses_stats` |  |
 | `rating` |  |
 | `released_on` |  |
 | `russian` |  |
 | `score` |  |
 | `status` |  |
-| `synonym` |  |
+| `synonyms` |  |
 | `thread_id` |  |
 | `topic_id` |  |
 | `url` |  |
@@ -346,12 +347,12 @@ Create an instance: `$anime = $client->Anime();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `string` |  |
-| `anon` | `bool` |  |
+| `anons` | `bool` |  |
 | `description` | `string` |  |
 | `description_html` | `string` |  |
 | `duration` | `int` |  |
 | `english` | `array` |  |
-| `episode` | `int` |  |
+| `episodes` | `int` |  |
 | `episodes_aired` | `int` |  |
 | `favoured` | `bool` |  |
 | `franchise` | `string` |  |
@@ -362,14 +363,14 @@ Create an instance: `$anime = $client->Anime();`
 | `myanimelist_id` | `int` |  |
 | `name` | `string` |  |
 | `ongoing` | `bool` |  |
-| `rates_scores_stat` | `array` |  |
-| `rates_statuses_stat` | `array` |  |
+| `rates_scores_stats` | `array` |  |
+| `rates_statuses_stats` | `array` |  |
 | `rating` | `string` |  |
 | `released_on` | `string` |  |
 | `russian` | `string` |  |
 | `score` | `string` |  |
 | `status` | `string` |  |
-| `synonym` | `array` |  |
+| `synonyms` | `array` |  |
 | `thread_id` | `int` |  |
 | `topic_id` | `int` |  |
 | `url` | `string` |  |

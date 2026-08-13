@@ -84,6 +84,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/achievements",
 								"parts": []any{
@@ -101,7 +102,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -119,7 +119,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "anon",
+						"name": "anons",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 1,
@@ -154,7 +154,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "episode",
+						"name": "episodes",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 6,
@@ -231,14 +231,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "rates_scores_stat",
+						"name": "rates_scores_stats",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 17,
 					},
 					map[string]any{
 						"active": true,
-						"name": "rates_statuses_stat",
+						"name": "rates_statuses_stats",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 18,
@@ -280,7 +280,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "synonym",
+						"name": "synonyms",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 24,
@@ -431,6 +431,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/animes",
 								"parts": []any{
@@ -461,7 +462,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

@@ -63,7 +63,7 @@ AchievementListMatch = Struct.new(
 # @!attribute [rw] aired_on
 #   @return [String, nil]
 #
-# @!attribute [rw] anon
+# @!attribute [rw] anons
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] description
@@ -78,7 +78,7 @@ AchievementListMatch = Struct.new(
 # @!attribute [rw] english
 #   @return [Array, nil]
 #
-# @!attribute [rw] episode
+# @!attribute [rw] episodes
 #   @return [Integer, nil]
 #
 # @!attribute [rw] episodes_aired
@@ -111,10 +111,10 @@ AchievementListMatch = Struct.new(
 # @!attribute [rw] ongoing
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] rates_scores_stat
+# @!attribute [rw] rates_scores_stats
 #   @return [Array, nil]
 #
-# @!attribute [rw] rates_statuses_stat
+# @!attribute [rw] rates_statuses_stats
 #   @return [Array, nil]
 #
 # @!attribute [rw] rating
@@ -132,7 +132,7 @@ AchievementListMatch = Struct.new(
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] synonym
+# @!attribute [rw] synonyms
 #   @return [Array, nil]
 #
 # @!attribute [rw] thread_id
@@ -145,12 +145,12 @@ AchievementListMatch = Struct.new(
 #   @return [String, nil]
 Anime = Struct.new(
   :aired_on,
-  :anon,
+  :anons,
   :description,
   :description_html,
   :duration,
   :english,
-  :episode,
+  :episodes,
   :episodes_aired,
   :favoured,
   :franchise,
@@ -161,14 +161,14 @@ Anime = Struct.new(
   :myanimelist_id,
   :name,
   :ongoing,
-  :rates_scores_stat,
-  :rates_statuses_stat,
+  :rates_scores_stats,
+  :rates_statuses_stats,
   :rating,
   :released_on,
   :russian,
   :score,
   :status,
-  :synonym,
+  :synonyms,
   :thread_id,
   :topic_id,
   :url,
@@ -180,7 +180,7 @@ Anime = Struct.new(
 # @!attribute [rw] aired_on
 #   @return [String, nil]
 #
-# @!attribute [rw] anon
+# @!attribute [rw] anons
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] description
@@ -195,7 +195,7 @@ Anime = Struct.new(
 # @!attribute [rw] english
 #   @return [Array, nil]
 #
-# @!attribute [rw] episode
+# @!attribute [rw] episodes
 #   @return [Integer, nil]
 #
 # @!attribute [rw] episodes_aired
@@ -228,10 +228,10 @@ Anime = Struct.new(
 # @!attribute [rw] ongoing
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] rates_scores_stat
+# @!attribute [rw] rates_scores_stats
 #   @return [Array, nil]
 #
-# @!attribute [rw] rates_statuses_stat
+# @!attribute [rw] rates_statuses_stats
 #   @return [Array, nil]
 #
 # @!attribute [rw] rating
@@ -249,7 +249,7 @@ Anime = Struct.new(
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] synonym
+# @!attribute [rw] synonyms
 #   @return [Array, nil]
 #
 # @!attribute [rw] thread_id
@@ -262,12 +262,12 @@ Anime = Struct.new(
 #   @return [String, nil]
 AnimeListMatch = Struct.new(
   :aired_on,
-  :anon,
+  :anons,
   :description,
   :description_html,
   :duration,
   :english,
-  :episode,
+  :episodes,
   :episodes_aired,
   :favoured,
   :franchise,
@@ -278,14 +278,14 @@ AnimeListMatch = Struct.new(
   :myanimelist_id,
   :name,
   :ongoing,
-  :rates_scores_stat,
-  :rates_statuses_stat,
+  :rates_scores_stats,
+  :rates_statuses_stats,
   :rating,
   :released_on,
   :russian,
   :score,
   :status,
-  :synonym,
+  :synonyms,
   :thread_id,
   :topic_id,
   :url,

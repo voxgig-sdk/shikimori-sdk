@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Shikimori SDK exists test
 
 import pytest
 from shikimori_sdk import ShikimoriSDK

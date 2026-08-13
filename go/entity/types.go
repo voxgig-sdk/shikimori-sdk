@@ -6,7 +6,11 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/voxgig-sdk/shikimori-sdk/go/core"
+)
 
 // Achievement is the typed data model for the achievement entity.
 type Achievement struct {
@@ -29,12 +33,12 @@ type AchievementListMatch struct {
 // Anime is the typed data model for the anime entity.
 type Anime struct {
 	AiredOn *string `json:"aired_on,omitempty"`
-	Anon *bool `json:"anon,omitempty"`
+	Anons *bool `json:"anons,omitempty"`
 	Description *string `json:"description,omitempty"`
 	DescriptionHtml *string `json:"description_html,omitempty"`
 	Duration *int `json:"duration,omitempty"`
 	English *[]any `json:"english,omitempty"`
-	Episode *int `json:"episode,omitempty"`
+	Episodes *int `json:"episodes,omitempty"`
 	EpisodesAired *int `json:"episodes_aired,omitempty"`
 	Favoured *bool `json:"favoured,omitempty"`
 	Franchise *string `json:"franchise,omitempty"`
@@ -45,14 +49,14 @@ type Anime struct {
 	MyanimelistId *int `json:"myanimelist_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Ongoing *bool `json:"ongoing,omitempty"`
-	RatesScoresStat *[]any `json:"rates_scores_stat,omitempty"`
-	RatesStatusesStat *[]any `json:"rates_statuses_stat,omitempty"`
+	RatesScoresStats *[]any `json:"rates_scores_stats,omitempty"`
+	RatesStatusesStats *[]any `json:"rates_statuses_stats,omitempty"`
 	Rating *string `json:"rating,omitempty"`
 	ReleasedOn *string `json:"released_on,omitempty"`
 	Russian *string `json:"russian,omitempty"`
 	Score *string `json:"score,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Synonym *[]any `json:"synonym,omitempty"`
+	Synonyms *[]any `json:"synonyms,omitempty"`
 	ThreadId *int `json:"thread_id,omitempty"`
 	TopicId *int `json:"topic_id,omitempty"`
 	Url *string `json:"url,omitempty"`
@@ -61,12 +65,12 @@ type Anime struct {
 // AnimeListMatch is the typed request payload for Anime.ListTyped.
 type AnimeListMatch struct {
 	AiredOn *string `json:"aired_on,omitempty"`
-	Anon *bool `json:"anon,omitempty"`
+	Anons *bool `json:"anons,omitempty"`
 	Description *string `json:"description,omitempty"`
 	DescriptionHtml *string `json:"description_html,omitempty"`
 	Duration *int `json:"duration,omitempty"`
 	English *[]any `json:"english,omitempty"`
-	Episode *int `json:"episode,omitempty"`
+	Episodes *int `json:"episodes,omitempty"`
 	EpisodesAired *int `json:"episodes_aired,omitempty"`
 	Favoured *bool `json:"favoured,omitempty"`
 	Franchise *string `json:"franchise,omitempty"`
@@ -77,14 +81,14 @@ type AnimeListMatch struct {
 	MyanimelistId *int `json:"myanimelist_id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Ongoing *bool `json:"ongoing,omitempty"`
-	RatesScoresStat *[]any `json:"rates_scores_stat,omitempty"`
-	RatesStatusesStat *[]any `json:"rates_statuses_stat,omitempty"`
+	RatesScoresStats *[]any `json:"rates_scores_stats,omitempty"`
+	RatesStatusesStats *[]any `json:"rates_statuses_stats,omitempty"`
 	Rating *string `json:"rating,omitempty"`
 	ReleasedOn *string `json:"released_on,omitempty"`
 	Russian *string `json:"russian,omitempty"`
 	Score *string `json:"score,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Synonym *[]any `json:"synonym,omitempty"`
+	Synonyms *[]any `json:"synonyms,omitempty"`
 	ThreadId *int `json:"thread_id,omitempty"`
 	TopicId *int `json:"topic_id,omitempty"`
 	Url *string `json:"url,omitempty"`
@@ -102,12 +106,26 @@ func asMap(v any) map[string]any {
 	return out
 }
 
-// typedFrom decodes a runtime value (a map[string]any produced by the op
-// pipeline) into a typed model T via a JSON round-trip. On any error it
-// returns the zero value of T; the op's own (value, error) tuple carries the
-// real error.
+// entityData unwraps an entity to its data map.
+//
+// Operations resolve to the ENTITY, not the raw data (see AGENTS.md), and an
+// entity's fields are UNEXPORTED — marshalling one directly yields `{}`, so
+// every typed accessor would silently hand back a zero-valued struct. The
+// typed boundary therefore takes the data hop first.
+func entityData(v any) any {
+	if ent, ok := v.(core.Entity); ok {
+		return ent.Data()
+	}
+	return v
+}
+
+// typedFrom decodes a runtime value (an entity, or the map[string]any the op
+// pipeline produced) into a typed model T via a JSON round-trip. On any error
+// it returns the zero value of T; the op's own (value, error) tuple carries
+// the real error.
 func typedFrom[T any](v any) T {
 	var out T
+	v = entityData(v)
 	if v == nil {
 		return out
 	}
@@ -119,12 +137,20 @@ func typedFrom[T any](v any) T {
 	return out
 }
 
-// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
-// slice []T via a JSON round-trip, for list ops.
+// typedSliceFrom decodes a runtime list value into a typed slice []T via a
+// JSON round-trip, for list ops. `list` resolves to a slice of ENTITY
+// instances, so each element takes the data hop.
 func typedSliceFrom[T any](v any) []T {
 	var out []T
 	if v == nil {
 		return out
+	}
+	if list, ok := v.([]any); ok {
+		unwrapped := make([]any, 0, len(list))
+		for _, item := range list {
+			unwrapped = append(unwrapped, entityData(item))
+		}
+		v = unwrapped
 	}
 	b, err := json.Marshal(v)
 	if err != nil {

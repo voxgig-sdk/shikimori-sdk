@@ -22,12 +22,12 @@
 
 ---@class Anime
 ---@field aired_on? string
----@field anon? boolean
+---@field anons? boolean
 ---@field description? string
 ---@field description_html? string
 ---@field duration? number
 ---@field english? table
----@field episode? number
+---@field episodes? number
 ---@field episodes_aired? number
 ---@field favoured? boolean
 ---@field franchise? string
@@ -38,26 +38,26 @@
 ---@field myanimelist_id? number
 ---@field name? string
 ---@field ongoing? boolean
----@field rates_scores_stat? table
----@field rates_statuses_stat? table
+---@field rates_scores_stats? table
+---@field rates_statuses_stats? table
 ---@field rating? string
 ---@field released_on? string
 ---@field russian? string
 ---@field score? string
 ---@field status? string
----@field synonym? table
+---@field synonyms? table
 ---@field thread_id? number
 ---@field topic_id? number
 ---@field url? string
 
 ---@class AnimeListMatch
 ---@field aired_on? string
----@field anon? boolean
+---@field anons? boolean
 ---@field description? string
 ---@field description_html? string
 ---@field duration? number
 ---@field english? table
----@field episode? number
+---@field episodes? number
 ---@field episodes_aired? number
 ---@field favoured? boolean
 ---@field franchise? string
@@ -68,14 +68,14 @@
 ---@field myanimelist_id? number
 ---@field name? string
 ---@field ongoing? boolean
----@field rates_scores_stat? table
----@field rates_statuses_stat? table
+---@field rates_scores_stats? table
+---@field rates_statuses_stats? table
 ---@field rating? string
 ---@field released_on? string
 ---@field russian? string
 ---@field score? string
 ---@field status? string
----@field synonym? table
+---@field synonyms? table
 ---@field thread_id? number
 ---@field topic_id? number
 ---@field url? string

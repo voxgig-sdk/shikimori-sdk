@@ -63,7 +63,7 @@ describe('AchievementEntity', async () => {
     const achievement_ref01_ent = client.Achievement()
     const achievement_ref01_match: any = {}
 
-    const achievement_ref01_list = await achievement_ref01_ent.list(achievement_ref01_match)
+    const achievement_ref01_list = (await achievement_ref01_ent.list(achievement_ref01_match)).map((e: any) => e.data())
 
 
   })

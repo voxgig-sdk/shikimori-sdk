@@ -155,12 +155,12 @@ anime = client.Anime
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `aired_on` | `String` | No |  |
-| `anon` | `Boolean` | No |  |
+| `anons` | `Boolean` | No |  |
 | `description` | `String` | No |  |
 | `description_html` | `String` | No |  |
 | `duration` | `Integer` | No |  |
 | `english` | `Array` | No |  |
-| `episode` | `Integer` | No |  |
+| `episodes` | `Integer` | No |  |
 | `episodes_aired` | `Integer` | No |  |
 | `favoured` | `Boolean` | No |  |
 | `franchise` | `String` | No |  |
@@ -171,14 +171,14 @@ anime = client.Anime
 | `myanimelist_id` | `Integer` | No |  |
 | `name` | `String` | No |  |
 | `ongoing` | `Boolean` | No |  |
-| `rates_scores_stat` | `Array` | No |  |
-| `rates_statuses_stat` | `Array` | No |  |
+| `rates_scores_stats` | `Array` | No |  |
+| `rates_statuses_stats` | `Array` | No |  |
 | `rating` | `String` | No |  |
 | `released_on` | `String` | No |  |
 | `russian` | `String` | No |  |
 | `score` | `String` | No |  |
 | `status` | `String` | No |  |
-| `synonym` | `Array` | No |  |
+| `synonyms` | `Array` | No |  |
 | `thread_id` | `Integer` | No |  |
 | `topic_id` | `Integer` | No |  |
 | `url` | `String` | No |  |

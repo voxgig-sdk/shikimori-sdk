@@ -37,7 +37,9 @@ const client = new ShikimoriSDK({
 
 ### 2. List achievement records
 
-`list()` resolves to an array of Achievement objects — iterate it directly:
+`list()` resolves to an array of Achievement ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const achievements = await client.Achievement().list()
@@ -122,7 +124,8 @@ Create a mock client for unit testing — no server required:
 const client = ShikimoriSDK.test()
 
 const achievement = await client.Achievement().list()
-// achievement is a bare entity populated with mock response data
+// achievement is the entity, populated with mock response data
+// — call achievement.data() for the record itself
 console.log(achievement)
 ```
 
@@ -306,12 +309,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `aired_on` |  |
-| `anon` |  |
+| `anons` |  |
 | `description` |  |
 | `description_html` |  |
 | `duration` |  |
 | `english` |  |
-| `episode` |  |
+| `episodes` |  |
 | `episodes_aired` |  |
 | `favoured` |  |
 | `franchise` |  |
@@ -322,14 +325,14 @@ API path: `/achievements`
 | `myanimelist_id` |  |
 | `name` |  |
 | `ongoing` |  |
-| `rates_scores_stat` |  |
-| `rates_statuses_stat` |  |
+| `rates_scores_stats` |  |
+| `rates_statuses_stats` |  |
 | `rating` |  |
 | `released_on` |  |
 | `russian` |  |
 | `score` |  |
 | `status` |  |
-| `synonym` |  |
+| `synonyms` |  |
 | `thread_id` |  |
 | `topic_id` |  |
 | `url` |  |
@@ -385,12 +388,12 @@ Create an instance: `const anime = client.Anime()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `string` |  |
-| `anon` | `boolean` |  |
+| `anons` | `boolean` |  |
 | `description` | `string` |  |
 | `description_html` | `string` |  |
 | `duration` | `number` |  |
 | `english` | `any[]` |  |
-| `episode` | `number` |  |
+| `episodes` | `number` |  |
 | `episodes_aired` | `number` |  |
 | `favoured` | `boolean` |  |
 | `franchise` | `string` |  |
@@ -401,14 +404,14 @@ Create an instance: `const anime = client.Anime()`
 | `myanimelist_id` | `number` |  |
 | `name` | `string` |  |
 | `ongoing` | `boolean` |  |
-| `rates_scores_stat` | `any[]` |  |
-| `rates_statuses_stat` | `any[]` |  |
+| `rates_scores_stats` | `any[]` |  |
+| `rates_statuses_stats` | `any[]` |  |
 | `rating` | `string` |  |
 | `released_on` | `string` |  |
 | `russian` | `string` |  |
 | `score` | `string` |  |
 | `status` | `string` |  |
-| `synonym` | `any[]` |  |
+| `synonyms` | `any[]` |  |
 | `thread_id` | `number` |  |
 | `topic_id` | `number` |  |
 | `url` | `string` |  |

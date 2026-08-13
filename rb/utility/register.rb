@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ ShikimoriUtility.registrar = ->(u) {
   u.prepare_params = ShikimoriUtilities::PrepareParams
   u.prepare_path = ShikimoriUtilities::PreparePath
   u.prepare_query = ShikimoriUtilities::PrepareQuery
+  u.graphql_body = ShikimoriUtilities::GraphqlBody
+  u.graphql_errors = ShikimoriUtilities::GraphqlErrors
   u.result_basic = ShikimoriUtilities::ResultBasic
   u.result_body = ShikimoriUtilities::ResultBody
   u.result_headers = ShikimoriUtilities::ResultHeaders

@@ -23,12 +23,12 @@ export interface AchievementListMatch {
 
 export interface Anime {
   aired_on?: string
-  anon?: boolean
+  anons?: boolean
   description?: string
   description_html?: string
   duration?: number
   english?: any[]
-  episode?: number
+  episodes?: number
   episodes_aired?: number
   favoured?: boolean
   franchise?: string
@@ -39,14 +39,14 @@ export interface Anime {
   myanimelist_id?: number
   name?: string
   ongoing?: boolean
-  rates_scores_stat?: any[]
-  rates_statuses_stat?: any[]
+  rates_scores_stats?: any[]
+  rates_statuses_stats?: any[]
   rating?: string
   released_on?: string
   russian?: string
   score?: string
   status?: string
-  synonym?: any[]
+  synonyms?: any[]
   thread_id?: number
   topic_id?: number
   url?: string
@@ -54,12 +54,12 @@ export interface Anime {
 
 export interface AnimeListMatch {
   aired_on?: string
-  anon?: boolean
+  anons?: boolean
   description?: string
   description_html?: string
   duration?: number
   english?: any[]
-  episode?: number
+  episodes?: number
   episodes_aired?: number
   favoured?: boolean
   franchise?: string
@@ -70,14 +70,14 @@ export interface AnimeListMatch {
   myanimelist_id?: number
   name?: string
   ongoing?: boolean
-  rates_scores_stat?: any[]
-  rates_statuses_stat?: any[]
+  rates_scores_stats?: any[]
+  rates_statuses_stats?: any[]
   rating?: string
   released_on?: string
   russian?: string
   score?: string
   status?: string
-  synonym?: any[]
+  synonyms?: any[]
   thread_id?: number
   topic_id?: number
   url?: string

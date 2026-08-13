@@ -127,7 +127,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = ShikimoriSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 achievement = client.Achievement().list()
 # achievement contains the mock response record
 ```
@@ -226,7 +227,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -263,12 +264,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `aired_on` |  |
-| `anon` |  |
+| `anons` |  |
 | `description` |  |
 | `description_html` |  |
 | `duration` |  |
 | `english` |  |
-| `episode` |  |
+| `episodes` |  |
 | `episodes_aired` |  |
 | `favoured` |  |
 | `franchise` |  |
@@ -279,14 +280,14 @@ API path: `/achievements`
 | `myanimelist_id` |  |
 | `name` |  |
 | `ongoing` |  |
-| `rates_scores_stat` |  |
-| `rates_statuses_stat` |  |
+| `rates_scores_stats` |  |
+| `rates_statuses_stats` |  |
 | `rating` |  |
 | `released_on` |  |
 | `russian` |  |
 | `score` |  |
 | `status` |  |
-| `synonym` |  |
+| `synonyms` |  |
 | `thread_id` |  |
 | `topic_id` |  |
 | `url` |  |
@@ -342,12 +343,12 @@ Create an instance: `anime = client.Anime()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `str` |  |
-| `anon` | `bool` |  |
+| `anons` | `bool` |  |
 | `description` | `str` |  |
 | `description_html` | `str` |  |
 | `duration` | `int` |  |
 | `english` | `list` |  |
-| `episode` | `int` |  |
+| `episodes` | `int` |  |
 | `episodes_aired` | `int` |  |
 | `favoured` | `bool` |  |
 | `franchise` | `str` |  |
@@ -358,14 +359,14 @@ Create an instance: `anime = client.Anime()`
 | `myanimelist_id` | `int` |  |
 | `name` | `str` |  |
 | `ongoing` | `bool` |  |
-| `rates_scores_stat` | `list` |  |
-| `rates_statuses_stat` | `list` |  |
+| `rates_scores_stats` | `list` |  |
+| `rates_statuses_stats` | `list` |  |
 | `rating` | `str` |  |
 | `released_on` | `str` |  |
 | `russian` | `str` |  |
 | `score` | `str` |  |
 | `status` | `str` |  |
-| `synonym` | `list` |  |
+| `synonyms` | `list` |  |
 | `thread_id` | `int` |  |
 | `topic_id` | `int` |  |
 | `url` | `str` |  |

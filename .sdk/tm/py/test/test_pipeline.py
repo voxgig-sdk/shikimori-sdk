@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import ShikimoriSDK
-from core.error import ShikimoriError
-from core.result import ShikimoriResult
-from core.response import ShikimoriResponse
-from core.spec import ShikimoriSpec
-from feature.base_feature import ShikimoriBaseFeature
+from projectname_sdk.core.error import ShikimoriError
+from projectname_sdk.core.result import ShikimoriResult
+from projectname_sdk.core.response import ShikimoriResponse
+from projectname_sdk.core.spec import ShikimoriSpec
+from projectname_sdk.feature.base_feature import ShikimoriBaseFeature
 
 
 def _client():

@@ -85,6 +85,7 @@ module ShikimoriConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/achievements",
                   "parts" => [
@@ -120,7 +121,7 @@ module ShikimoriConfig
             },
             {
               "active" => true,
-              "name" => "anon",
+              "name" => "anons",
               "req" => false,
               "type" => "`$BOOLEAN`",
               "index$" => 1,
@@ -155,7 +156,7 @@ module ShikimoriConfig
             },
             {
               "active" => true,
-              "name" => "episode",
+              "name" => "episodes",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 6,
@@ -232,14 +233,14 @@ module ShikimoriConfig
             },
             {
               "active" => true,
-              "name" => "rates_scores_stat",
+              "name" => "rates_scores_stats",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 17,
             },
             {
               "active" => true,
-              "name" => "rates_statuses_stat",
+              "name" => "rates_statuses_stats",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 18,
@@ -281,7 +282,7 @@ module ShikimoriConfig
             },
             {
               "active" => true,
-              "name" => "synonym",
+              "name" => "synonyms",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 24,
@@ -432,6 +433,7 @@ module ShikimoriConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/animes",
                   "parts" => [

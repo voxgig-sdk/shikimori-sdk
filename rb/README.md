@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = ShikimoriSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 achievement = client.Achievement.list()
 puts achievement
 ```
@@ -256,12 +257,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `aired_on` |  |
-| `anon` |  |
+| `anons` |  |
 | `description` |  |
 | `description_html` |  |
 | `duration` |  |
 | `english` |  |
-| `episode` |  |
+| `episodes` |  |
 | `episodes_aired` |  |
 | `favoured` |  |
 | `franchise` |  |
@@ -272,14 +273,14 @@ API path: `/achievements`
 | `myanimelist_id` |  |
 | `name` |  |
 | `ongoing` |  |
-| `rates_scores_stat` |  |
-| `rates_statuses_stat` |  |
+| `rates_scores_stats` |  |
+| `rates_statuses_stats` |  |
 | `rating` |  |
 | `released_on` |  |
 | `russian` |  |
 | `score` |  |
 | `status` |  |
-| `synonym` |  |
+| `synonyms` |  |
 | `thread_id` |  |
 | `topic_id` |  |
 | `url` |  |
@@ -336,12 +337,12 @@ Create an instance: `anime = client.Anime`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `String` |  |
-| `anon` | `Boolean` |  |
+| `anons` | `Boolean` |  |
 | `description` | `String` |  |
 | `description_html` | `String` |  |
 | `duration` | `Integer` |  |
 | `english` | `Array` |  |
-| `episode` | `Integer` |  |
+| `episodes` | `Integer` |  |
 | `episodes_aired` | `Integer` |  |
 | `favoured` | `Boolean` |  |
 | `franchise` | `String` |  |
@@ -352,14 +353,14 @@ Create an instance: `anime = client.Anime`
 | `myanimelist_id` | `Integer` |  |
 | `name` | `String` |  |
 | `ongoing` | `Boolean` |  |
-| `rates_scores_stat` | `Array` |  |
-| `rates_statuses_stat` | `Array` |  |
+| `rates_scores_stats` | `Array` |  |
+| `rates_statuses_stats` | `Array` |  |
 | `rating` | `String` |  |
 | `released_on` | `String` |  |
 | `russian` | `String` |  |
 | `score` | `String` |  |
 | `status` | `String` |  |
-| `synonym` | `Array` |  |
+| `synonyms` | `Array` |  |
 | `thread_id` | `Integer` |  |
 | `topic_id` | `Integer` |  |
 | `url` | `String` |  |

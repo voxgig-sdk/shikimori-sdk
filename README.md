@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = ShikimoriSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = ShikimoriSDK.test({
+  entity: {
+    achievement: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const achievements = await client.Achievement().list()
-// achievements is an array of bare Achievement records populated with mock data
+// achievements is an array of Achievement entities, populated with mock data
+// — call achievements[0].data() for the record itself
 console.log(achievements)
 ```
 
@@ -112,7 +121,7 @@ const client = new ShikimoriSDK({
   apikey: process.env.SHIKIMORI_APIKEY,
 })
 
-// List all achievements (returns Achievement[])
+// List all achievements (returns AchievementEntity[] — .data() for the record)
 const achievements = await client.Achievement().list()
 for (const achievement of achievements) {
   console.log(achievement)
@@ -357,6 +366,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://shikimori.one/api](https://shikimori.one/api)
 

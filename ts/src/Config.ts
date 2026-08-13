@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Shikimori',
   }
 
 
@@ -117,6 +117,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/achievements",
               "parts": [
@@ -152,7 +153,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "anon",
+          "name": "anons",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 1
@@ -187,7 +188,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "episode",
+          "name": "episodes",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 6
@@ -264,14 +265,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "rates_scores_stat",
+          "name": "rates_scores_stats",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "rates_statuses_stat",
+          "name": "rates_statuses_stats",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 18
@@ -313,7 +314,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "synonym",
+          "name": "synonyms",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 24
@@ -464,6 +465,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/animes",
               "parts": [

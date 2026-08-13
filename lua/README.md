@@ -223,9 +223,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local achievement, err = client:Achievement():load()
+    local achievement, err = client:Achievement():list()
     if err then error(err) end
-    -- achievement is the loaded record
+    -- achievement is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -251,12 +251,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `aired_on` |  |
-| `anon` |  |
+| `anons` |  |
 | `description` |  |
 | `description_html` |  |
 | `duration` |  |
 | `english` |  |
-| `episode` |  |
+| `episodes` |  |
 | `episodes_aired` |  |
 | `favoured` |  |
 | `franchise` |  |
@@ -267,14 +267,14 @@ API path: `/achievements`
 | `myanimelist_id` |  |
 | `name` |  |
 | `ongoing` |  |
-| `rates_scores_stat` |  |
-| `rates_statuses_stat` |  |
+| `rates_scores_stats` |  |
+| `rates_statuses_stats` |  |
 | `rating` |  |
 | `released_on` |  |
 | `russian` |  |
 | `score` |  |
 | `status` |  |
-| `synonym` |  |
+| `synonyms` |  |
 | `thread_id` |  |
 | `topic_id` |  |
 | `url` |  |
@@ -330,12 +330,12 @@ Create an instance: `local anime = client:Anime(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `string` |  |
-| `anon` | `boolean` |  |
+| `anons` | `boolean` |  |
 | `description` | `string` |  |
 | `description_html` | `string` |  |
 | `duration` | `number` |  |
 | `english` | `table` |  |
-| `episode` | `number` |  |
+| `episodes` | `number` |  |
 | `episodes_aired` | `number` |  |
 | `favoured` | `boolean` |  |
 | `franchise` | `string` |  |
@@ -346,14 +346,14 @@ Create an instance: `local anime = client:Anime(nil)`
 | `myanimelist_id` | `number` |  |
 | `name` | `string` |  |
 | `ongoing` | `boolean` |  |
-| `rates_scores_stat` | `table` |  |
-| `rates_statuses_stat` | `table` |  |
+| `rates_scores_stats` | `table` |  |
+| `rates_statuses_stats` | `table` |  |
 | `rating` | `string` |  |
 | `released_on` | `string` |  |
 | `russian` | `string` |  |
 | `score` | `string` |  |
 | `status` | `string` |  |
-| `synonym` | `table` |  |
+| `synonyms` | `table` |  |
 | `thread_id` | `number` |  |
 | `topic_id` | `number` |  |
 | `url` | `string` |  |

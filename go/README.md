@@ -281,12 +281,12 @@ API path: `/achievements`
 | Field | Description |
 | --- | --- |
 | `"aired_on"` |  |
-| `"anon"` |  |
+| `"anons"` |  |
 | `"description"` |  |
 | `"description_html"` |  |
 | `"duration"` |  |
 | `"english"` |  |
-| `"episode"` |  |
+| `"episodes"` |  |
 | `"episodes_aired"` |  |
 | `"favoured"` |  |
 | `"franchise"` |  |
@@ -297,14 +297,14 @@ API path: `/achievements`
 | `"myanimelist_id"` |  |
 | `"name"` |  |
 | `"ongoing"` |  |
-| `"rates_scores_stat"` |  |
-| `"rates_statuses_stat"` |  |
+| `"rates_scores_stats"` |  |
+| `"rates_statuses_stats"` |  |
 | `"rating"` |  |
 | `"released_on"` |  |
 | `"russian"` |  |
 | `"score"` |  |
 | `"status"` |  |
-| `"synonym"` |  |
+| `"synonyms"` |  |
 | `"thread_id"` |  |
 | `"topic_id"` |  |
 | `"url"` |  |
@@ -364,12 +364,12 @@ Create an instance: `anime := client.Anime(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `aired_on` | `string` |  |
-| `anon` | `bool` |  |
+| `anons` | `bool` |  |
 | `description` | `string` |  |
 | `description_html` | `string` |  |
 | `duration` | `int` |  |
 | `english` | `[]any` |  |
-| `episode` | `int` |  |
+| `episodes` | `int` |  |
 | `episodes_aired` | `int` |  |
 | `favoured` | `bool` |  |
 | `franchise` | `string` |  |
@@ -380,14 +380,14 @@ Create an instance: `anime := client.Anime(nil)`
 | `myanimelist_id` | `int` |  |
 | `name` | `string` |  |
 | `ongoing` | `bool` |  |
-| `rates_scores_stat` | `[]any` |  |
-| `rates_statuses_stat` | `[]any` |  |
+| `rates_scores_stats` | `[]any` |  |
+| `rates_statuses_stats` | `[]any` |  |
 | `rating` | `string` |  |
 | `released_on` | `string` |  |
 | `russian` | `string` |  |
 | `score` | `string` |  |
 | `status` | `string` |  |
-| `synonym` | `[]any` |  |
+| `synonyms` | `[]any` |  |
 | `thread_id` | `int` |  |
 | `topic_id` | `int` |  |
 | `url` | `string` |  |

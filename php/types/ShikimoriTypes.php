@@ -36,12 +36,12 @@ class AchievementListMatch
 class Anime
 {
     public ?string $aired_on = null;
-    public ?bool $anon = null;
+    public ?bool $anons = null;
     public ?string $description = null;
     public ?string $description_html = null;
     public ?int $duration = null;
     public ?array $english = null;
-    public ?int $episode = null;
+    public ?int $episodes = null;
     public ?int $episodes_aired = null;
     public ?bool $favoured = null;
     public ?string $franchise = null;
@@ -52,14 +52,14 @@ class Anime
     public ?int $myanimelist_id = null;
     public ?string $name = null;
     public ?bool $ongoing = null;
-    public ?array $rates_scores_stat = null;
-    public ?array $rates_statuses_stat = null;
+    public ?array $rates_scores_stats = null;
+    public ?array $rates_statuses_stats = null;
     public ?string $rating = null;
     public ?string $released_on = null;
     public ?string $russian = null;
     public ?string $score = null;
     public ?string $status = null;
-    public ?array $synonym = null;
+    public ?array $synonyms = null;
     public ?int $thread_id = null;
     public ?int $topic_id = null;
     public ?string $url = null;
@@ -69,12 +69,12 @@ class Anime
 class AnimeListMatch
 {
     public ?string $aired_on = null;
-    public ?bool $anon = null;
+    public ?bool $anons = null;
     public ?string $description = null;
     public ?string $description_html = null;
     public ?int $duration = null;
     public ?array $english = null;
-    public ?int $episode = null;
+    public ?int $episodes = null;
     public ?int $episodes_aired = null;
     public ?bool $favoured = null;
     public ?string $franchise = null;
@@ -85,14 +85,14 @@ class AnimeListMatch
     public ?int $myanimelist_id = null;
     public ?string $name = null;
     public ?bool $ongoing = null;
-    public ?array $rates_scores_stat = null;
-    public ?array $rates_statuses_stat = null;
+    public ?array $rates_scores_stats = null;
+    public ?array $rates_statuses_stats = null;
     public ?string $rating = null;
     public ?string $released_on = null;
     public ?string $russian = null;
     public ?string $score = null;
     public ?string $status = null;
-    public ?array $synonym = null;
+    public ?array $synonyms = null;
     public ?int $thread_id = null;
     public ?int $topic_id = null;
     public ?string $url = null;

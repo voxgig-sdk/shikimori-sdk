@@ -11,7 +11,7 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
-      name: "anon"
+      name: "anons"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -36,7 +36,7 @@ main: kit: entity: anime: {
       type: "`$ARRAY`"
     }
     {
-      name: "episode"
+      name: "episodes"
       req: false
       type: "`$INTEGER`"
     }
@@ -91,12 +91,12 @@ main: kit: entity: anime: {
       type: "`$BOOLEAN`"
     }
     {
-      name: "rates_scores_stat"
+      name: "rates_scores_stats"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "rates_statuses_stat"
+      name: "rates_statuses_stats"
       req: false
       type: "`$ARRAY`"
     }
@@ -126,7 +126,7 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
-      name: "synonym"
+      name: "synonyms"
       req: false
       type: "`$ARRAY`"
     }

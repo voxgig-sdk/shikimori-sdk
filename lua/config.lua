@@ -84,6 +84,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/achievements",
                 ["parts"] = {
@@ -119,7 +120,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "anon",
+            ["name"] = "anons",
             ["req"] = false,
             ["type"] = "`$BOOLEAN`",
             ["index$"] = 1,
@@ -154,7 +155,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "episode",
+            ["name"] = "episodes",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 6,
@@ -231,14 +232,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "rates_scores_stat",
+            ["name"] = "rates_scores_stats",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 17,
           },
           {
             ["active"] = true,
-            ["name"] = "rates_statuses_stat",
+            ["name"] = "rates_statuses_stats",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 18,
@@ -280,7 +281,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "synonym",
+            ["name"] = "synonyms",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 24,
@@ -431,6 +432,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/animes",
                 ["parts"] = {

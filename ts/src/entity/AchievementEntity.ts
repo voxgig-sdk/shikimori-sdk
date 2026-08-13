@@ -37,7 +37,7 @@ class AchievementEntity extends ShikimoriEntityBase<Achievement> {
 
 
 
-  async list(this: any, reqmatch?: AchievementListMatch, ctrl?: Control): Promise<Achievement[]> {
+  async list(this: any, reqmatch?: AchievementListMatch, ctrl?: Control): Promise<AchievementEntity[]> {
 
     const utility = this._utility
 

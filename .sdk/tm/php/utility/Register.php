@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ ShikimoriUtility::setRegistrar(function (ShikimoriUtility $u): void {
     $u->prepare_params = [ShikimoriPrepareParams::class, 'call'];
     $u->prepare_path = [ShikimoriPreparePath::class, 'call'];
     $u->prepare_query = [ShikimoriPrepareQuery::class, 'call'];
+    $u->graphql_body = [ShikimoriGraphql::class, 'body'];
+    $u->graphql_errors = [ShikimoriGraphql::class, 'errors'];
     $u->result_basic = [ShikimoriResultBasic::class, 'call'];
     $u->result_body = [ShikimoriResultBody::class, 'call'];
     $u->result_headers = [ShikimoriResultHeaders::class, 'call'];
