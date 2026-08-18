@@ -15,7 +15,7 @@ require_relative "../Shikimori_sdk"
 module ShikimoriFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = ShikimoriConfig.make_config["feature"]
+    f = ShikimoriConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

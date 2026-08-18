@@ -33,7 +33,7 @@ class AchievementEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = ShikimoriConfig.make_config
+    cfg = ShikimoriConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = ShikimoriSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

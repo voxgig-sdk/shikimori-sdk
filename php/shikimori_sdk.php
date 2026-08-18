@@ -40,7 +40,7 @@ class ShikimoriSDK
         $utility = new ShikimoriUtility();
         $this->_utility = $utility;
 
-        $config = ShikimoriConfig::make_config();
+        $config = ShikimoriConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

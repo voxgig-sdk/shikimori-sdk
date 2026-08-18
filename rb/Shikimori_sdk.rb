@@ -28,7 +28,7 @@ class ShikimoriSDK
     utility = ShikimoriUtility.new
     @_utility = utility
 
-    config = ShikimoriConfig.make_config
+    config = ShikimoriConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
