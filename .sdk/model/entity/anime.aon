@@ -8,56 +8,67 @@ main: kit: entity: anime: {
     {
       name: "aired_on"
       req: false
+      short: "Aired date"
       type: "`$STRING`"
     }
     {
       name: "anons"
       req: false
+      short: "Is in anons state"
       type: "`$BOOLEAN`"
     }
     {
       name: "description"
       req: false
+      short: "Anime description"
       type: "`$STRING`"
     }
     {
       name: "description_html"
       req: false
+      short: "HTML formatted description"
       type: "`$STRING`"
     }
     {
       name: "duration"
       req: false
+      short: "Episode duration in minutes"
       type: "`$INTEGER`"
     }
     {
       name: "english"
       req: false
+      short: "English names"
       type: "`$ARRAY`"
     }
     {
       name: "episodes"
       req: false
+      short: "Number of episodes"
       type: "`$INTEGER`"
     }
     {
       name: "episodes_aired"
       req: false
+      short: "Number of aired episodes"
       type: "`$INTEGER`"
     }
     {
       name: "favoured"
       req: false
+      short: "Favoured by user"
       type: "`$BOOLEAN`"
     }
     {
       name: "franchise"
       req: false
+      short: "Franchise name"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Anime ID"
       type: "`$INTEGER`"
     }
     {
@@ -68,81 +79,97 @@ main: kit: entity: anime: {
     {
       name: "japanese"
       req: false
+      short: "Japanese names"
       type: "`$ARRAY`"
     }
     {
       name: "kind"
       req: false
+      short: "Anime type"
       type: "`$STRING`"
     }
     {
       name: "myanimelist_id"
       req: false
+      short: "MyAnimeList ID"
       type: "`$INTEGER`"
     }
     {
       name: "name"
       req: false
+      short: "Anime name"
       type: "`$STRING`"
     }
     {
       name: "ongoing"
       req: false
+      short: "Is ongoing"
       type: "`$BOOLEAN`"
     }
     {
       name: "rates_scores_stats"
       req: false
+      short: "Rating statistics"
       type: "`$ARRAY`"
     }
     {
       name: "rates_statuses_stats"
       req: false
+      short: "Status statistics"
       type: "`$ARRAY`"
     }
     {
       name: "rating"
       req: false
+      short: "Age rating"
       type: "`$STRING`"
     }
     {
       name: "released_on"
       req: false
+      short: "Released date"
       type: "`$STRING`"
     }
     {
       name: "russian"
       req: false
+      short: "Russian name"
       type: "`$STRING`"
     }
     {
       name: "score"
       req: false
+      short: "Anime score"
       type: "`$STRING`"
     }
     {
       name: "status"
       req: false
+      short: "Anime status"
       type: "`$STRING`"
     }
     {
       name: "synonyms"
       req: false
+      short: "Alternative names"
       type: "`$ARRAY`"
     }
     {
       name: "thread_id"
       req: false
+      short: "Thread ID"
       type: "`$INTEGER`"
     }
     {
       name: "topic_id"
       req: false
+      short: "Topic ID"
       type: "`$INTEGER`"
     }
     {
       name: "url"
       req: false
+      short: "Anime URL"
       type: "`$STRING`"
     }
   ]

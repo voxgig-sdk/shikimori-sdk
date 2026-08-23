@@ -242,11 +242,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `level` |  |
-| `neko_id` |  |
-| `progress` |  |
-| `user_id` |  |
+| `id` | Achievement ID |
+| `level` | Achievement level |
+| `neko_id` | Neko achievement identifier |
+| `progress` | Progress towards next level |
+| `user_id` | User ID |
 
 Operations: List.
 
@@ -256,34 +256,34 @@ API path: `/achievements`
 
 | Field | Description |
 | --- | --- |
-| `aired_on` |  |
-| `anons` |  |
-| `description` |  |
-| `description_html` |  |
-| `duration` |  |
-| `english` |  |
-| `episodes` |  |
-| `episodes_aired` |  |
-| `favoured` |  |
-| `franchise` |  |
-| `id` |  |
+| `aired_on` | Aired date |
+| `anons` | Is in anons state |
+| `description` | Anime description |
+| `description_html` | HTML formatted description |
+| `duration` | Episode duration in minutes |
+| `english` | English names |
+| `episodes` | Number of episodes |
+| `episodes_aired` | Number of aired episodes |
+| `favoured` | Favoured by user |
+| `franchise` | Franchise name |
+| `id` | Anime ID |
 | `image` |  |
-| `japanese` |  |
-| `kind` |  |
-| `myanimelist_id` |  |
-| `name` |  |
-| `ongoing` |  |
-| `rates_scores_stats` |  |
-| `rates_statuses_stats` |  |
-| `rating` |  |
-| `released_on` |  |
-| `russian` |  |
-| `score` |  |
-| `status` |  |
-| `synonyms` |  |
-| `thread_id` |  |
-| `topic_id` |  |
-| `url` |  |
+| `japanese` | Japanese names |
+| `kind` | Anime type |
+| `myanimelist_id` | MyAnimeList ID |
+| `name` | Anime name |
+| `ongoing` | Is ongoing |
+| `rates_scores_stats` | Rating statistics |
+| `rates_statuses_stats` | Status statistics |
+| `rating` | Age rating |
+| `released_on` | Released date |
+| `russian` | Russian name |
+| `score` | Anime score |
+| `status` | Anime status |
+| `synonyms` | Alternative names |
+| `thread_id` | Thread ID |
+| `topic_id` | Topic ID |
+| `url` | Anime URL |
 
 Operations: List.
 
@@ -308,11 +308,11 @@ Create an instance: `achievement = client.Achievement`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `Integer` |  |
-| `level` | `Integer` |  |
-| `neko_id` | `String` |  |
-| `progress` | `Integer` |  |
-| `user_id` | `Integer` |  |
+| `id` | `Integer` | Achievement ID |
+| `level` | `Integer` | Achievement level |
+| `neko_id` | `String` | Neko achievement identifier |
+| `progress` | `Integer` | Progress towards next level |
+| `user_id` | `Integer` | User ID |
 
 #### Example: List
 
@@ -336,34 +336,34 @@ Create an instance: `anime = client.Anime`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aired_on` | `String` |  |
-| `anons` | `Boolean` |  |
-| `description` | `String` |  |
-| `description_html` | `String` |  |
-| `duration` | `Integer` |  |
-| `english` | `Array` |  |
-| `episodes` | `Integer` |  |
-| `episodes_aired` | `Integer` |  |
-| `favoured` | `Boolean` |  |
-| `franchise` | `String` |  |
-| `id` | `Integer` |  |
+| `aired_on` | `String` | Aired date |
+| `anons` | `Boolean` | Is in anons state |
+| `description` | `String` | Anime description |
+| `description_html` | `String` | HTML formatted description |
+| `duration` | `Integer` | Episode duration in minutes |
+| `english` | `Array` | English names |
+| `episodes` | `Integer` | Number of episodes |
+| `episodes_aired` | `Integer` | Number of aired episodes |
+| `favoured` | `Boolean` | Favoured by user |
+| `franchise` | `String` | Franchise name |
+| `id` | `Integer` | Anime ID |
 | `image` | `Hash` |  |
-| `japanese` | `Array` |  |
-| `kind` | `String` |  |
-| `myanimelist_id` | `Integer` |  |
-| `name` | `String` |  |
-| `ongoing` | `Boolean` |  |
-| `rates_scores_stats` | `Array` |  |
-| `rates_statuses_stats` | `Array` |  |
-| `rating` | `String` |  |
-| `released_on` | `String` |  |
-| `russian` | `String` |  |
-| `score` | `String` |  |
-| `status` | `String` |  |
-| `synonyms` | `Array` |  |
-| `thread_id` | `Integer` |  |
-| `topic_id` | `Integer` |  |
-| `url` | `String` |  |
+| `japanese` | `Array` | Japanese names |
+| `kind` | `String` | Anime type |
+| `myanimelist_id` | `Integer` | MyAnimeList ID |
+| `name` | `String` | Anime name |
+| `ongoing` | `Boolean` | Is ongoing |
+| `rates_scores_stats` | `Array` | Rating statistics |
+| `rates_statuses_stats` | `Array` | Status statistics |
+| `rating` | `String` | Age rating |
+| `released_on` | `String` | Released date |
+| `russian` | `String` | Russian name |
+| `score` | `String` | Anime score |
+| `status` | `String` | Anime status |
+| `synonyms` | `Array` | Alternative names |
+| `thread_id` | `Integer` | Thread ID |
+| `topic_id` | `Integer` | Topic ID |
+| `url` | `String` | Anime URL |
 
 #### Example: List
 

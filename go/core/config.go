@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Shikimori",
+			"slug": "shikimori",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -37,22 +40,27 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"short": "Achievement ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "level",
+						"short": "Achievement level",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "neko_id",
+						"short": "Neko achievement identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "progress",
+						"short": "Progress towards next level",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "user_id",
+						"short": "User ID",
 						"type": "`$INTEGER`",
 					},
 				},
@@ -101,46 +109,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "aired_on",
+						"short": "Aired date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "anons",
+						"short": "Is in anons state",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Anime description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description_html",
+						"short": "HTML formatted description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "duration",
+						"short": "Episode duration in minutes",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "english",
+						"short": "English names",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "episodes",
+						"short": "Number of episodes",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "episodes_aired",
+						"short": "Number of aired episodes",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "favoured",
+						"short": "Favoured by user",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "franchise",
+						"short": "Franchise name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Anime ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
@@ -149,66 +168,82 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "japanese",
+						"short": "Japanese names",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "kind",
+						"short": "Anime type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "myanimelist_id",
+						"short": "MyAnimeList ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Anime name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ongoing",
+						"short": "Is ongoing",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "rates_scores_stats",
+						"short": "Rating statistics",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "rates_statuses_stats",
+						"short": "Status statistics",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "rating",
+						"short": "Age rating",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "released_on",
+						"short": "Released date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "russian",
+						"short": "Russian name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "score",
+						"short": "Anime score",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Anime status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "synonyms",
+						"short": "Alternative names",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "thread_id",
+						"short": "Thread ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "topic_id",
+						"short": "Topic ID",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "Anime URL",
 						"type": "`$STRING`",
 					},
 				},

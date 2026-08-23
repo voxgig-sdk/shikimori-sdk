@@ -8,26 +8,31 @@ main: kit: entity: achievement: {
     {
       name: "id"
       req: false
+      short: "Achievement ID"
       type: "`$INTEGER`"
     }
     {
       name: "level"
       req: false
+      short: "Achievement level"
       type: "`$INTEGER`"
     }
     {
       name: "neko_id"
       req: false
+      short: "Neko achievement identifier"
       type: "`$STRING`"
     }
     {
       name: "progress"
       req: false
+      short: "Progress towards next level"
       type: "`$INTEGER`"
     }
     {
       name: "user_id"
       req: false
+      short: "User ID"
       type: "`$INTEGER`"
     }
   ]

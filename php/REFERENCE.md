@@ -97,11 +97,11 @@ $achievement = $client->Achievement();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `int` | No |  |
-| `level` | `int` | No |  |
-| `neko_id` | `string` | No |  |
-| `progress` | `int` | No |  |
-| `user_id` | `int` | No |  |
+| `id` | `int` | No | Achievement ID |
+| `level` | `int` | No | Achievement level |
+| `neko_id` | `string` | No | Neko achievement identifier |
+| `progress` | `int` | No | Progress towards next level |
+| `user_id` | `int` | No | User ID |
 
 ### Operations
 
@@ -153,34 +153,34 @@ $anime = $client->Anime();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired_on` | `string` | No |  |
-| `anons` | `bool` | No |  |
-| `description` | `string` | No |  |
-| `description_html` | `string` | No |  |
-| `duration` | `int` | No |  |
-| `english` | `array` | No |  |
-| `episodes` | `int` | No |  |
-| `episodes_aired` | `int` | No |  |
-| `favoured` | `bool` | No |  |
-| `franchise` | `string` | No |  |
-| `id` | `int` | No |  |
+| `aired_on` | `string` | No | Aired date |
+| `anons` | `bool` | No | Is in anons state |
+| `description` | `string` | No | Anime description |
+| `description_html` | `string` | No | HTML formatted description |
+| `duration` | `int` | No | Episode duration in minutes |
+| `english` | `array` | No | English names |
+| `episodes` | `int` | No | Number of episodes |
+| `episodes_aired` | `int` | No | Number of aired episodes |
+| `favoured` | `bool` | No | Favoured by user |
+| `franchise` | `string` | No | Franchise name |
+| `id` | `int` | No | Anime ID |
 | `image` | `array` | No |  |
-| `japanese` | `array` | No |  |
-| `kind` | `string` | No |  |
-| `myanimelist_id` | `int` | No |  |
-| `name` | `string` | No |  |
-| `ongoing` | `bool` | No |  |
-| `rates_scores_stats` | `array` | No |  |
-| `rates_statuses_stats` | `array` | No |  |
-| `rating` | `string` | No |  |
-| `released_on` | `string` | No |  |
-| `russian` | `string` | No |  |
-| `score` | `string` | No |  |
-| `status` | `string` | No |  |
-| `synonyms` | `array` | No |  |
-| `thread_id` | `int` | No |  |
-| `topic_id` | `int` | No |  |
-| `url` | `string` | No |  |
+| `japanese` | `array` | No | Japanese names |
+| `kind` | `string` | No | Anime type |
+| `myanimelist_id` | `int` | No | MyAnimeList ID |
+| `name` | `string` | No | Anime name |
+| `ongoing` | `bool` | No | Is ongoing |
+| `rates_scores_stats` | `array` | No | Rating statistics |
+| `rates_statuses_stats` | `array` | No | Status statistics |
+| `rating` | `string` | No | Age rating |
+| `released_on` | `string` | No | Released date |
+| `russian` | `string` | No | Russian name |
+| `score` | `string` | No | Anime score |
+| `status` | `string` | No | Anime status |
+| `synonyms` | `array` | No | Alternative names |
+| `thread_id` | `int` | No | Thread ID |
+| `topic_id` | `int` | No | Topic ID |
+| `url` | `string` | No | Anime URL |
 
 ### Operations
 
