@@ -25,11 +25,7 @@ class Achievement
 /** Request payload for Achievement#list. */
 class AchievementListMatch
 {
-    public ?int $id = null;
-    public ?int $level = null;
-    public ?string $neko_id = null;
-    public ?int $progress = null;
-    public ?int $user_id = null;
+    public int $user_id;
 }
 
 /** Anime entity data model. */
@@ -68,33 +64,19 @@ class Anime
 /** Request payload for Anime#list. */
 class AnimeListMatch
 {
-    public ?string $aired_on = null;
-    public ?bool $anons = null;
-    public ?string $description = null;
-    public ?string $description_html = null;
-    public ?int $duration = null;
-    public ?array $english = null;
-    public ?int $episodes = null;
-    public ?int $episodes_aired = null;
-    public ?bool $favoured = null;
+    public ?string $duration = null;
     public ?string $franchise = null;
-    public ?int $id = null;
-    public ?array $image = null;
-    public ?array $japanese = null;
+    public ?string $genre = null;
+    public ?string $genre_v2 = null;
     public ?string $kind = null;
-    public ?int $myanimelist_id = null;
-    public ?string $name = null;
-    public ?bool $ongoing = null;
-    public ?array $rates_scores_stats = null;
-    public ?array $rates_statuses_stats = null;
+    public ?int $limit = null;
+    public ?string $order = null;
+    public ?int $page = null;
     public ?string $rating = null;
-    public ?string $released_on = null;
-    public ?string $russian = null;
-    public ?string $score = null;
+    public ?float $score = null;
+    public ?string $season = null;
     public ?string $status = null;
-    public ?array $synonyms = null;
-    public ?int $thread_id = null;
-    public ?int $topic_id = null;
-    public ?string $url = null;
+    public ?string $studio = null;
+    public ?string $type = null;
 }
 

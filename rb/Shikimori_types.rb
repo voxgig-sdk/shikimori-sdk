@@ -35,25 +35,9 @@ Achievement = Struct.new(
 
 # Request payload for Achievement#list.
 #
-# @!attribute [rw] id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] level
-#   @return [Integer, nil]
-#
-# @!attribute [rw] neko_id
-#   @return [String, nil]
-#
-# @!attribute [rw] progress
-#   @return [Integer, nil]
-#
 # @!attribute [rw] user_id
-#   @return [Integer, nil]
+#   @return [Integer]
 AchievementListMatch = Struct.new(
-  :id,
-  :level,
-  :neko_id,
-  :progress,
   :user_id,
   keyword_init: true
 )
@@ -177,118 +161,62 @@ Anime = Struct.new(
 
 # Request payload for Anime#list.
 #
-# @!attribute [rw] aired_on
-#   @return [String, nil]
-#
-# @!attribute [rw] anons
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] description_html
-#   @return [String, nil]
-#
 # @!attribute [rw] duration
-#   @return [Integer, nil]
-#
-# @!attribute [rw] english
-#   @return [Array, nil]
-#
-# @!attribute [rw] episodes
-#   @return [Integer, nil]
-#
-# @!attribute [rw] episodes_aired
-#   @return [Integer, nil]
-#
-# @!attribute [rw] favoured
-#   @return [Boolean, nil]
+#   @return [String, nil]
 #
 # @!attribute [rw] franchise
 #   @return [String, nil]
 #
-# @!attribute [rw] id
-#   @return [Integer, nil]
+# @!attribute [rw] genre
+#   @return [String, nil]
 #
-# @!attribute [rw] image
-#   @return [Hash, nil]
-#
-# @!attribute [rw] japanese
-#   @return [Array, nil]
+# @!attribute [rw] genre_v2
+#   @return [String, nil]
 #
 # @!attribute [rw] kind
 #   @return [String, nil]
 #
-# @!attribute [rw] myanimelist_id
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] name
+# @!attribute [rw] order
 #   @return [String, nil]
 #
-# @!attribute [rw] ongoing
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] rates_scores_stats
-#   @return [Array, nil]
-#
-# @!attribute [rw] rates_statuses_stats
-#   @return [Array, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 #
 # @!attribute [rw] rating
 #   @return [String, nil]
 #
-# @!attribute [rw] released_on
-#   @return [String, nil]
-#
-# @!attribute [rw] russian
-#   @return [String, nil]
-#
 # @!attribute [rw] score
+#   @return [Float, nil]
+#
+# @!attribute [rw] season
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] synonyms
-#   @return [Array, nil]
+# @!attribute [rw] studio
+#   @return [String, nil]
 #
-# @!attribute [rw] thread_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] topic_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] type
 #   @return [String, nil]
 AnimeListMatch = Struct.new(
-  :aired_on,
-  :anons,
-  :description,
-  :description_html,
   :duration,
-  :english,
-  :episodes,
-  :episodes_aired,
-  :favoured,
   :franchise,
-  :id,
-  :image,
-  :japanese,
+  :genre,
+  :genre_v2,
   :kind,
-  :myanimelist_id,
-  :name,
-  :ongoing,
-  :rates_scores_stats,
-  :rates_statuses_stats,
+  :limit,
+  :order,
+  :page,
   :rating,
-  :released_on,
-  :russian,
   :score,
+  :season,
   :status,
-  :synonyms,
-  :thread_id,
-  :topic_id,
-  :url,
+  :studio,
+  :type,
   keyword_init: true
 )
 

@@ -23,11 +23,7 @@ type Achievement struct {
 
 // AchievementListMatch is the typed request payload for Achievement.ListTyped.
 type AchievementListMatch struct {
-	Id *int `json:"id,omitempty"`
-	Level *int `json:"level,omitempty"`
-	NekoId *string `json:"neko_id,omitempty"`
-	Progress *int `json:"progress,omitempty"`
-	UserId *int `json:"user_id,omitempty"`
+	UserId int `json:"user_id"`
 }
 
 // Anime is the typed data model for the anime entity.
@@ -64,34 +60,20 @@ type Anime struct {
 
 // AnimeListMatch is the typed request payload for Anime.ListTyped.
 type AnimeListMatch struct {
-	AiredOn *string `json:"aired_on,omitempty"`
-	Anons *bool `json:"anons,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DescriptionHtml *string `json:"description_html,omitempty"`
-	Duration *int `json:"duration,omitempty"`
-	English *[]any `json:"english,omitempty"`
-	Episodes *int `json:"episodes,omitempty"`
-	EpisodesAired *int `json:"episodes_aired,omitempty"`
-	Favoured *bool `json:"favoured,omitempty"`
+	Duration *string `json:"duration,omitempty"`
 	Franchise *string `json:"franchise,omitempty"`
-	Id *int `json:"id,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Japanese *[]any `json:"japanese,omitempty"`
+	Genre *string `json:"genre,omitempty"`
+	GenreV2 *string `json:"genre_v2,omitempty"`
 	Kind *string `json:"kind,omitempty"`
-	MyanimelistId *int `json:"myanimelist_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Ongoing *bool `json:"ongoing,omitempty"`
-	RatesScoresStats *[]any `json:"rates_scores_stats,omitempty"`
-	RatesStatusesStats *[]any `json:"rates_statuses_stats,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Order *string `json:"order,omitempty"`
+	Page *int `json:"page,omitempty"`
 	Rating *string `json:"rating,omitempty"`
-	ReleasedOn *string `json:"released_on,omitempty"`
-	Russian *string `json:"russian,omitempty"`
-	Score *string `json:"score,omitempty"`
+	Score *float64 `json:"score,omitempty"`
+	Season *string `json:"season,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Synonyms *[]any `json:"synonyms,omitempty"`
-	ThreadId *int `json:"thread_id,omitempty"`
-	TopicId *int `json:"topic_id,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Studio *string `json:"studio,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

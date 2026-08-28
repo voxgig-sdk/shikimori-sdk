@@ -24,11 +24,7 @@ class Achievement(TypedDict, total=False):
     user_id: int
 
 
-class AchievementListMatch(TypedDict, total=False):
-    id: int
-    level: int
-    neko_id: str
-    progress: int
+class AchievementListMatch(TypedDict):
     user_id: int
 
 
@@ -64,31 +60,17 @@ class Anime(TypedDict, total=False):
 
 
 class AnimeListMatch(TypedDict, total=False):
-    aired_on: str
-    anons: bool
-    description: str
-    description_html: str
-    duration: int
-    english: list
-    episodes: int
-    episodes_aired: int
-    favoured: bool
+    duration: str
     franchise: str
-    id: int
-    image: dict
-    japanese: list
+    genre: str
+    genre_v2: str
     kind: str
-    myanimelist_id: int
-    name: str
-    ongoing: bool
-    rates_scores_stats: list
-    rates_statuses_stats: list
+    limit: int
+    order: str
+    page: int
     rating: str
-    released_on: str
-    russian: str
-    score: str
+    score: float
+    season: str
     status: str
-    synonyms: list
-    thread_id: int
-    topic_id: int
-    url: str
+    studio: str
+    type: str
