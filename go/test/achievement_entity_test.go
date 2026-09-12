@@ -98,7 +98,7 @@ func TestAchievementEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		achievementRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.achievement", setup.data)))
+		achievementRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.achievement")))
 		var achievementRef01Data map[string]any
 		if len(achievementRef01DataRaw) > 0 {
 			achievementRef01Data = core.ToMapAny(achievementRef01DataRaw[0][1])
@@ -147,7 +147,7 @@ func achievementBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"achievement01", "achievement02", "achievement03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -167,7 +167,7 @@ func achievementBasicSetup(extra map[string]any) *entityTestSetup {
 		"SHIKIMORI_TEST_ACHIEVEMENT_ENTID": idmap,
 		"SHIKIMORI_TEST_LIVE":      "FALSE",
 		"SHIKIMORI_TEST_EXPLAIN":   "FALSE",
-		"SHIKIMORI_APIKEY":         "NONE",
+		"SHIKIMORI_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["SHIKIMORI_TEST_ACHIEVEMENT_ENTID"])
@@ -176,11 +176,23 @@ func achievementBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["SHIKIMORI_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["SHIKIMORI_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewShikimoriSDK(core.ToMapAny(mergedOpts))
 	}

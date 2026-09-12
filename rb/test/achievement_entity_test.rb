@@ -118,7 +118,7 @@ def achievement_basic_setup(extra)
     "SHIKIMORI_TEST_ACHIEVEMENT_ENTID" => idmap,
     "SHIKIMORI_TEST_LIVE" => "FALSE",
     "SHIKIMORI_TEST_EXPLAIN" => "FALSE",
-    "SHIKIMORI_APIKEY" => "NONE",
+    "SHIKIMORI_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -129,6 +129,9 @@ def achievement_basic_setup(extra)
 
   if env["SHIKIMORI_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["SHIKIMORI_APIKEY"],
       },

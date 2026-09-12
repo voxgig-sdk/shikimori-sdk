@@ -65,6 +65,10 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "achievement",
 				"op": map[string]any{
 					"list": map[string]any{
@@ -86,8 +90,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/achievements",
-								"parts": []any{
-									"achievements",
+								"segments": []any{
+									map[string]any{
+										"lit": "achievements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -97,6 +103,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"achievements",
 								},
 							},
 						},
@@ -109,6 +118,7 @@ func MakeConfig() map[string]any {
 			"anime": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date",
 						"name": "aired_on",
 						"short": "Aired date",
 						"type": "`$STRING`",
@@ -208,6 +218,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "released_on",
 						"short": "Released date",
 						"type": "`$STRING`",
@@ -247,6 +258,10 @@ func MakeConfig() map[string]any {
 						"short": "Anime URL",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "anime",
 				"op": map[string]any{
@@ -346,8 +361,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/animes",
-								"parts": []any{
-									"animes",
+								"segments": []any{
+									map[string]any{
+										"lit": "animes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -371,6 +388,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"animes",
+								},
 							},
 						},
 					},
@@ -381,6 +401,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

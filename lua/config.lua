@@ -61,6 +61,10 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "achievement",
         ["op"] = {
           ["list"] = {
@@ -82,8 +86,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/achievements",
-                ["parts"] = {
-                  "achievements",
+                ["segments"] = {
+                  {
+                    ["lit"] = "achievements",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -93,6 +99,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "achievements",
                 },
               },
             },
@@ -105,6 +114,7 @@ local function make_config()
       ["anime"] = {
         ["fields"] = {
           {
+            ["format"] = "date",
             ["name"] = "aired_on",
             ["short"] = "Aired date",
             ["type"] = "`$STRING`",
@@ -204,6 +214,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "released_on",
             ["short"] = "Released date",
             ["type"] = "`$STRING`",
@@ -243,6 +254,10 @@ local function make_config()
             ["short"] = "Anime URL",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "anime",
         ["op"] = {
@@ -342,8 +357,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/animes",
-                ["parts"] = {
-                  "animes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "animes",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -366,6 +383,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "animes",
                 },
               },
             },

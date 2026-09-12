@@ -68,15 +68,17 @@ function achievement_direct_setup($mockres)
     $env = Runner::env_override([
         "SHIKIMORI_TEST_ACHIEVEMENT_ENTID" => [],
         "SHIKIMORI_TEST_LIVE" => "FALSE",
-        "SHIKIMORI_APIKEY" => "NONE",
+        "SHIKIMORI_APIKEY" => "",
     ]);
 
     $live = $env["SHIKIMORI_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["SHIKIMORI_APIKEY"],
-        ];
+        ]);
         $client = new ShikimoriSDK($merged_opts);
         return [
             "client" => $client,

@@ -87,6 +87,10 @@ class ShikimoriConfig
               'type' => '`$INTEGER`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'achievement',
           'op' => [
             'list' => [
@@ -108,8 +112,10 @@ class ShikimoriConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/achievements',
-                  'parts' => [
-                    'achievements',
+                  'segments' => [
+                    [
+                      'lit' => 'achievements',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -119,6 +125,9 @@ class ShikimoriConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'achievements',
                   ],
                 ],
               ],
@@ -131,6 +140,7 @@ class ShikimoriConfig
         'anime' => [
           'fields' => [
             [
+              'format' => 'date',
               'name' => 'aired_on',
               'short' => 'Aired date',
               'type' => '`$STRING`',
@@ -230,6 +240,7 @@ class ShikimoriConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'released_on',
               'short' => 'Released date',
               'type' => '`$STRING`',
@@ -269,6 +280,10 @@ class ShikimoriConfig
               'short' => 'Anime URL',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'anime',
           'op' => [
@@ -368,8 +383,10 @@ class ShikimoriConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/animes',
-                  'parts' => [
-                    'animes',
+                  'segments' => [
+                    [
+                      'lit' => 'animes',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -392,6 +409,9 @@ class ShikimoriConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'animes',
                   ],
                 ],
               ],

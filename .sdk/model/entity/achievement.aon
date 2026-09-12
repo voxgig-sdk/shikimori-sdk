@@ -61,8 +61,10 @@ main: kit: entity: achievement: {
           }
           method: "GET"
           orig: "/achievements"
-          parts: [
-            "achievements"
+          segments: [
+            {
+              lit: "achievements"
+            }
           ]
           select: {
             exist: [

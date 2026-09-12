@@ -6,6 +6,7 @@ main: kit: entity: anime: {
 
   fields: [
     {
+      format: "date"
       name: "aired_on"
       req: false
       short: "Aired date"
@@ -125,6 +126,7 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "released_on"
       req: false
       short: "Released date"
@@ -289,8 +291,10 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/animes"
-          parts: [
-            "animes"
+          segments: [
+            {
+              lit: "animes"
+            }
           ]
           select: {
             exist: [
