@@ -105,7 +105,7 @@ local results, err = client:Achievement():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
+| TypeScript | `@voxgig-sdk/shikimori-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
 | Python | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
 | PHP | `voxgig-sdk/shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/shikimori-sdk/go` | `go get github.com/voxgig-sdk/shikimori-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Achievement():list()
 ### TypeScript
 
 ```ts
-import { ShikimoriSDK } from '@voxgig-sdk/shikimori'
+import { ShikimoriSDK } from '@voxgig-sdk/shikimori-sdk'
 
 const client = new ShikimoriSDK({
   apikey: process.env.SHIKIMORI_APIKEY,

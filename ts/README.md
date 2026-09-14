@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { ShikimoriSDK } from '@voxgig-sdk/shikimori'
+import { ShikimoriSDK } from '@voxgig-sdk/shikimori-sdk'
 
 const client = new ShikimoriSDK({
   apikey: process.env.SHIKIMORI_APIKEY,
@@ -505,7 +505,7 @@ shikimori/
 Import the SDK from the package root:
 
 ```ts
-import { ShikimoriSDK } from '@voxgig-sdk/shikimori'
+import { ShikimoriSDK } from '@voxgig-sdk/shikimori-sdk'
 ```
 
 ### Entity state
