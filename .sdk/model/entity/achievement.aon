@@ -59,6 +59,12 @@ main: kit: entity: achievement: {
               }
             ]
           }
+          contract: {
+            id: "GET /achievements"
+            json: "{\"operationId\":\"getAchievements\",\"parameters\":[{\"description\":\"The ID of the user whose achievements to retrieve\",\"in\":\"query\",\"name\":\"user_id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"description\":\"User achievement object\",\"properties\":{\"id\":{\"description\":\"Achievement ID\",\"type\":\"integer\"},\"level\":{\"description\":\"Achievement level\",\"type\":\"integer\"},\"neko_id\":{\"description\":\"Neko achievement identifier\",\"type\":\"string\"},\"progress\":{\"description\":\"Progress towards next level\",\"type\":\"integer\"},\"user_id\":{\"description\":\"User ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"},\"400\":{\"description\":\"Bad request - Invalid user_id\"},\"401\":{\"description\":\"Unauthorized - Invalid or missing OAuth2 token\"},\"429\":{\"description\":\"Rate limit exceeded (5rps or 90rpm)\"}},\"security\":[{\"oauth2\":[]}],\"securitySchemes\":{\"oauth2\":{\"description\":\"OAuth2 authentication. See https://shikimori.one/oauth for details. User-Agent header with your OAuth2 Application name is required.\",\"flows\":{\"authorizationCode\":{\"authorizationUrl\":\"https://shikimori.one/oauth/authorize\",\"scopes\":{},\"tokenUrl\":\"https://shikimori.one/oauth/token\"}},\"type\":\"oauth2\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/achievements"
           segments: [

@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "achievement": {
           "active": true,
@@ -91,6 +155,12 @@
                         "type": "`$INTEGER`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /achievements",
+                    "json": "{\"operationId\":\"getAchievements\",\"parameters\":[{\"description\":\"The ID of the user whose achievements to retrieve\",\"in\":\"query\",\"name\":\"user_id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"description\":\"User achievement object\",\"properties\":{\"id\":{\"description\":\"Achievement ID\",\"type\":\"integer\"},\"level\":{\"description\":\"Achievement level\",\"type\":\"integer\"},\"neko_id\":{\"description\":\"Neko achievement identifier\",\"type\":\"string\"},\"progress\":{\"description\":\"Progress towards next level\",\"type\":\"integer\"},\"user_id\":{\"description\":\"User ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"},\"400\":{\"description\":\"Bad request - Invalid user_id\"},\"401\":{\"description\":\"Unauthorized - Invalid or missing OAuth2 token\"},\"429\":{\"description\":\"Rate limit exceeded (5rps or 90rpm)\"}},\"security\":[{\"oauth2\":[]}],\"securitySchemes\":{\"oauth2\":{\"description\":\"OAuth2 authentication. See https://shikimori.one/oauth for details. User-Agent header with your OAuth2 Application name is required.\",\"flows\":{\"authorizationCode\":{\"authorizationUrl\":\"https://shikimori.one/oauth/authorize\",\"scopes\":{},\"tokenUrl\":\"https://shikimori.one/oauth/token\"}},\"type\":\"oauth2\"}},\"securitySource\":\"definition\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -449,6 +519,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /animes",
+                    "json": "{\"operationId\":\"getAnimes\",\"parameters\":[{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"maximum\":100000,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Number of results per page (maximum 50)\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"maximum\":50,\"type\":\"integer\"}},{\"description\":\"Sort order for results\",\"in\":\"query\",\"name\":\"order\",\"required\":false,\"schema\":{\"enum\":[\"id\",\"id_desc\",\"ranked\",\"kind\",\"popularity\",\"name\",\"aired_on\",\"episodes\",\"status\",\"random\",\"ranked_random\",\"ranked_shiki\",\"created_at\",\"created_at_desc\",\"updated_at\",\"updated_at_desc\"],\"type\":\"string\"}},{\"deprecated\":true,\"description\":\"Deprecated parameter for anime type\",\"in\":\"query\",\"name\":\"type\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Type of anime. Can be comma-separated list or use '!' for exclusion\",\"in\":\"query\",\"name\":\"kind\",\"required\":false,\"schema\":{\"enum\":[\"tv\",\"movie\",\"ova\",\"ona\",\"special\",\"tv_special\",\"music\",\"pv\",\"cm\",\"tv_13\",\"tv_24\",\"tv_48\"],\"type\":\"string\"}},{\"description\":\"Status of anime. Can be comma-separated list or use '!' for exclusion\",\"in\":\"query\",\"name\":\"status\",\"required\":false,\"schema\":{\"enum\":[\"anons\",\"ongoing\",\"released\"],\"type\":\"string\"}},{\"description\":\"Season filter. Examples: summer_2017, 2016, 2014_2016, 199x. Can be comma-separated list or use '!' for exclusion\",\"in\":\"query\",\"name\":\"season\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Minimal anime score\",\"in\":\"query\",\"name\":\"score\",\"required\":false,\"schema\":{\"type\":\"number\"}},{\"description\":\"Duration category: S (less than 10 minutes), D (less than 30 minutes), F (more than 30 minutes)\",\"in\":\"query\",\"name\":\"duration\",\"required\":false,\"schema\":{\"enum\":[\"S\",\"D\",\"F\"],\"type\":\"string\"}},{\"description\":\"Age rating of the anime\",\"in\":\"query\",\"name\":\"rating\",\"required\":false,\"schema\":{\"enum\":[\"none\",\"g\",\"pg\",\"pg_13\",\"r\",\"r_plus\",\"rx\"],\"type\":\"string\"}},{\"description\":\"List of genre IDs separated by comma. Can use '!' for exclusion\",\"in\":\"query\",\"name\":\"genre\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"List of genre v2 IDs separated by comma. Can use '!' for exclusion\",\"in\":\"query\",\"name\":\"genre_v2\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"List of studio IDs separated by comma. Can use '!' for exclusion\",\"in\":\"query\",\"name\":\"studio\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"List of franchises separated by comma. Can use '!' for exclusion\",\"in\":\"query\",\"name\":\"franchise\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"description\":\"Anime object\",\"properties\":{\"aired_on\":{\"description\":\"Aired date\",\"format\":\"date\",\"type\":\"string\"},\"anons\":{\"description\":\"Is in anons state\",\"type\":\"boolean\"},\"description\":{\"description\":\"Anime description\",\"type\":\"string\"},\"description_html\":{\"description\":\"HTML formatted description\",\"type\":\"string\"},\"duration\":{\"description\":\"Episode duration in minutes\",\"type\":\"integer\"},\"english\":{\"description\":\"English names\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"episodes\":{\"description\":\"Number of episodes\",\"type\":\"integer\"},\"episodes_aired\":{\"description\":\"Number of aired episodes\",\"type\":\"integer\"},\"favoured\":{\"description\":\"Favoured by user\",\"type\":\"boolean\"},\"franchise\":{\"description\":\"Franchise name\",\"type\":\"string\"},\"id\":{\"description\":\"Anime ID\",\"type\":\"integer\"},\"image\":{\"properties\":{\"original\":{\"description\":\"Original image URL\",\"type\":\"string\"},\"preview\":{\"description\":\"Preview image URL\",\"type\":\"string\"},\"x48\":{\"description\":\"48px image URL\",\"type\":\"string\"},\"x96\":{\"description\":\"96px image URL\",\"type\":\"string\"}},\"type\":\"object\"},\"japanese\":{\"description\":\"Japanese names\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"kind\":{\"description\":\"Anime type\",\"enum\":[\"tv\",\"movie\",\"ova\",\"ona\",\"special\",\"tv_special\",\"music\",\"pv\",\"cm\"],\"type\":\"string\"},\"myanimelist_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Anime name\",\"type\":\"string\"},\"ongoing\":{\"description\":\"Is ongoing\",\"type\":\"boolean\"},\"rates_scores_stats\":{\"description\":\"Rating statistics\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"rates_statuses_stats\":{\"description\":\"Status statistics\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"rating\":{\"description\":\"Age rating\",\"enum\":[\"none\",\"g\",\"pg\",\"pg_13\",\"r\",\"r_plus\",\"rx\"],\"type\":\"string\"},\"released_on\":{\"description\":\"Released date\",\"format\":\"date\",\"type\":\"string\"},\"russian\":{\"description\":\"Russian name\",\"type\":\"string\"},\"score\":{\"description\":\"Anime score\",\"type\":\"string\"},\"status\":{\"description\":\"Anime status\",\"enum\":[\"anons\",\"ongoing\",\"released\"],\"type\":\"string\"},\"synonyms\":{\"description\":\"Alternative names\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"thread_id\":{\"description\":\"Thread ID\",\"type\":\"integer\"},\"topic_id\":{\"description\":\"Topic ID\",\"type\":\"integer\"},\"url\":{\"description\":\"Anime URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response with list of animes. Returns N+1 results if next page exists when requesting N elements\"},\"400\":{\"description\":\"Bad request - Invalid parameters\"},\"401\":{\"description\":\"Unauthorized - Invalid or missing OAuth2 token\"},\"429\":{\"description\":\"Rate limit exceeded (5rps or 90rpm)\"}},\"security\":[{\"oauth2\":[]}],\"securitySchemes\":{\"oauth2\":{\"description\":\"OAuth2 authentication. See https://shikimori.one/oauth for details. User-Agent header with your OAuth2 Application name is required.\",\"flows\":{\"authorizationCode\":{\"authorizationUrl\":\"https://shikimori.one/oauth/authorize\",\"scopes\":{},\"tokenUrl\":\"https://shikimori.one/oauth/token\"}},\"type\":\"oauth2\"}},\"securitySource\":\"definition\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/animes",
@@ -489,13 +565,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -586,6 +872,102 @@
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
           "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
+          "version": "0.0.1"
         }
       },
       "flow": {
@@ -669,6 +1051,48 @@
         "x-documentation": "https://shikimori.one/api/doc/1.0"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1223,6 +1647,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1264,7 +1689,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

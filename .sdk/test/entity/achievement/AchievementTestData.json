@@ -3,23 +3,23 @@
     "achievement": {
       "ACHIEVEMENT00": {
         "id": "ACHIEVEMENT00",
-        "level": "s33",
+        "level": 51,
         "neko_id": "NEKO01",
-        "progress": "s35",
+        "progress": 53,
         "user_id": "USER01"
       },
       "ACHIEVEMENT01": {
         "id": "ACHIEVEMENT01",
-        "level": "s65",
+        "level": 101,
         "neko_id": "NEKO01",
-        "progress": "s67",
+        "progress": 103,
         "user_id": "USER01"
       },
       "ACHIEVEMENT02": {
         "id": "ACHIEVEMENT02",
-        "level": "s97",
+        "level": 151,
         "neko_id": "NEKO01",
-        "progress": "s99",
+        "progress": 153,
         "user_id": "USER01"
       }
     }
@@ -27,10 +27,96 @@
   "new": {
     "achievement": {
       "achievement_ref01": {
-        "level": "sc9",
+        "level": 201,
         "neko_id": "NEKO01",
-        "progress": "scb",
+        "progress": 203,
         "user_id": "USER01"
+      }
+    }
+  },
+  "requests": {
+    "GET /achievements": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAchievements",
+        "parameters": [
+          {
+            "description": "The ID of the user whose achievements to retrieve",
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "description": "User achievement object",
+                    "properties": {
+                      "id": {
+                        "description": "Achievement ID",
+                        "type": "integer"
+                      },
+                      "level": {
+                        "description": "Achievement level",
+                        "type": "integer"
+                      },
+                      "neko_id": {
+                        "description": "Neko achievement identifier",
+                        "type": "string"
+                      },
+                      "progress": {
+                        "description": "Progress towards next level",
+                        "type": "integer"
+                      },
+                      "user_id": {
+                        "description": "User ID",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request - Invalid user_id"
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing OAuth2 token"
+          },
+          "429": {
+            "description": "Rate limit exceeded (5rps or 90rpm)"
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "securitySchemes": {
+          "oauth2": {
+            "description": "OAuth2 authentication. See https://shikimori.one/oauth for details. User-Agent header with your OAuth2 Application name is required.",
+            "flows": {
+              "authorizationCode": {
+                "authorizationUrl": "https://shikimori.one/oauth/authorize",
+                "scopes": {},
+                "tokenUrl": "https://shikimori.one/oauth/token"
+              }
+            },
+            "type": "oauth2"
+          }
+        },
+        "securitySource": "definition"
       }
     }
   }
