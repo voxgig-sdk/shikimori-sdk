@@ -131,12 +131,12 @@ class Config {
 
     entity: {
       
-      achievement: {
-      },
-
-      anime: {
-      },
-
+        achievement: {
+        },
+  
+        anime: {
+        },
+  
     }
   }
 

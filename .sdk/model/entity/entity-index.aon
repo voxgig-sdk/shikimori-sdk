@@ -1,4 +1,4 @@
 # Entity Models
 
-@"achievement.aon"
-@"anime.aon"
+@"./achievement.aon"
+@"./anime.aon"

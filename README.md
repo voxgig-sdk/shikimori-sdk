@@ -105,12 +105,12 @@ local results, err = client:Achievement():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/shikimori-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
-| Python | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
-| PHP | `voxgig-sdk/shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
+| TypeScript | `@voxgig-sdk/shikimori-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/tags) |
+| Python | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/tags) |
+| PHP | `voxgig-sdk/shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/shikimori-sdk/go` | `go get github.com/voxgig-sdk/shikimori-sdk/go@latest` |
-| Ruby | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
-| Lua | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/releases) |
+| Ruby | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/tags) |
+| Lua | `voxgig-sdk-shikimori` | publish pending — [install from git tag](https://github.com/voxgig-sdk/shikimori-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/shikimori-sdk/go-cli` | `go install github.com/voxgig-sdk/shikimori-sdk/go-cli/cmd/shikimori@latest` |
 | Go MCP server | `github.com/voxgig-sdk/shikimori-sdk/go-mcp` | `go get github.com/voxgig-sdk/shikimori-sdk/go-mcp@latest` |
 

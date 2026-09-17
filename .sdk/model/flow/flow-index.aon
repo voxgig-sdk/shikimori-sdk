@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicAchievementFlow.aon"
-@"BasicAnimeFlow.aon"
+@"./BasicAchievementFlow.aon"
+@"./BasicAnimeFlow.aon"
